@@ -56,6 +56,7 @@
                 },
             }
         ]
+        
         console.log(addresses[0].name)
         console.log(addresses[1].name)
         console.log(addresses[2].name)

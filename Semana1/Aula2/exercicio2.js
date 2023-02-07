@@ -55,13 +55,10 @@
             }
         },
     ]
-
-
     var soma = 0;
 
     for (let i = 0; i < alunos.length; i++) {
         soma += alunos[i].Matematica.nota;
     }
-
     var media = soma / alunos.length;
     console.log(`A media de nota de Matematica dos alunos foi: ${media}`);

@@ -51,6 +51,6 @@ console.log(`Idade: ${alunos[4].idade}`); */
 for (const index in alunos) {
 
 console.log(
-    `Nome: ${alunos[index].nome}; Altura: ${alunos[index].altura}; Sexo: ${alunos[index].sexo}; Sala: ${alunos[index].sala}; Idade: ${alunos[index].idade}`
+    ` Nome: ${alunos[index].nome}; Altura: ${alunos[index].altura}; Sexo: ${alunos[index].sexo}; Sala: ${alunos[index].sala}; Idade: ${alunos[index].idade}`
 );
 }
