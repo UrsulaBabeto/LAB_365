@@ -1,0 +1,29 @@
+paginas estaticas 
+paginas dinamicas - brendan eich - livescript - javascript -ecmascript6
+ecma- empresa de normatização
+linguagem de script permite programador controlar uma ou mais aplicações de terceiros
+
+GITHUB/git
+
+-é um sistema de controle de versão de arquivos
+-podemos manter um historico de todas as alteraçoes que foram realizadas em nossos arquivos de codigo fonte
+-podemos visualizar todas as alterações realizadas por todos os membros
+substitiu CVS e SVN
+
+Pull Request: é uma solicitação de que a branch principal "puxe" a branch alternativa
+solicitação de merge para que ele aceite o seu codigo
+mecanismo de segurança
+
+git init
+git add "nome"   prepara as alterações para serem commitadas
+git commit -m   'mensagem descritiva' (salva as alterações)
+git push 
+git pull   recebe as alterações do github
+git branch 
+git remote add
+git checkout     'nome' sai de uma branch e vai pra outra
+git checkout -b   'nome' sai de uma branch e cria outra
+git merge
+git clone
+git log
+
