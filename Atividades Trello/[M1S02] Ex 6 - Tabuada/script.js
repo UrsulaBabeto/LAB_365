@@ -15,10 +15,10 @@ button.addEventListener("click", (e) => {
     for (let i = 1; i < 50; i++) {
         total = number.value * i;   
 
-        const newDiv = document.createElement("p");
-        const newContent = document.createTextNode(`${number.value} x ${i+1} = ${total} `)
-        newDiv.appendChild(newContent);
-        document.body.insertBefore(newDiv, res);
+        const answerDisplay = document.createElement("p");
+        const text = document.createTextNode(`${number.value} x ${i+1} = ${total} `)
+        answerDisplay.appendChild(text);
+        document.body.insertBefore(answerDisplay, res);
 
      }
        
