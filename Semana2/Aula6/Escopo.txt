@@ -1,0 +1,18 @@
+escopo = é a acessibilidade de objetos variaveis e funções em diferentes partes do codigo determina quais sao os 
+dados que podem ser acessados em uma determinada parte do codigo
+
+hoisting = sempre que declaramos umavariavel do tipo var ela é movida para o topo do seu escopo antes da execução do codigo
+var = function-scoped significa que seu escopo é limitado a função que foi declarada
+var de escopo global= variavel declarada fora de funções
+
+let = variaveis com escopo local, acessivel dentro do bloco que esta criada
+podemos atribuir um novo valor
+
+const = usadas para criar variaveis que não alteram o valor, possui escopo local é obrigatorio atribuir um valor no momento da criação
+
+eventos = sao procedimentos executados em consequencia a uma ação
+
+script:
+
+addeventlistener = vincula a função com um evento desejado
+removeEventListener = desvincula a função do evento (não acessa a pagina de login por exemplo)

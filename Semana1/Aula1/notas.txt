@@ -1,0 +1,4 @@
+paginas estaticas 
+paginas dinamicas - brendan eich - livescript - javascript -ecmascript6
+ecma- empresa de normatização
+linguagem de script permite programador controlar uma ou mais aplicações de terceiros
