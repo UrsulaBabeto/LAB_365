@@ -13,7 +13,7 @@ let total = 0;
 
 
     button.addEventListener("click", (e) => {
-        for (let i = 1; i < 10; i++) {
+        for (let i = 1; i <= 10; i++) {
 
             total = number.value * i;
 
