@@ -14,13 +14,6 @@ let text;
 
 button.addEventListener("click", (e) => {
 
-<<<<<<< HEAD
-    let total;
-=======
-    button.addEventListener("click", (e) => {
-        for (let i = 1; i <= 10; i++) {
->>>>>>> ad8a0fa11d1b7141d18d86f8b79f764cfcb197cb
-
     for (let i = 1; i <= 10; i++) {
 
         total = number.value * i;
@@ -31,6 +24,6 @@ button.addEventListener("click", (e) => {
         displayAnswer.appendChild(text);
         document.body.insertBefore(displayAnswer, res);
     }
-    displayAnswer = document.elemen
+
 })
 
