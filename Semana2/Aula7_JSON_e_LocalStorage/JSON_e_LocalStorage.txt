@@ -1,0 +1,33 @@
+objetos sao parecidos com vetores. damos nomes aos indicis utilizando chave e valor
+chaves: indices de um objeto. Qunado insrimos um item em objeto criamos um par chave-valor
+o acesso se da atraves de um "." apos o nome do vetor ex.: pessoa.nome ou pessoa['nome']
+
+
+JSON
+javaScript Object Notation
+-representação de uma estrutura de objetos em javascript em forma de texto baseadas e pares de chave-valor
+-envia dados do backk-end para o front-end
+-manipula estrutura de dados com texto
+-facil de ler e entender
+-processamento leve e de facil interpretação
+	
+JSON.parse converte um texto(string) em objeto
+JSON.stringfy converte o objeto em JSON(texto string)
+
+LocalStorage
+Maneiras de armazenar informações no navegador (localStorage e cookies)
+recurso de armazenamento de dados em formato de texto presente no navegador e acessivel via JS
+armazenam ate 5mb
+acesso: window.logalStorage texto tipo JSON
+
+
+localStorage.setItem('name','Ursula') - seta informações
+const dado = localStorage.getItem('name') - busca informação
+localStorage.removeItem('name') - apaga o valor da chave
+localStorage.clear() - apaga todos os dados armazenados no lacalStorage
+
+
+Atraso e Intervalo
+timeout()serve para definir um tempo de atraso na execução de uma função setTimeout(funcao,100)
+clearTimeout define quando a função para de funcionar
+interval definir um tempo de intervalo entre execuções recorrentes da função setInterval(funcao,200)

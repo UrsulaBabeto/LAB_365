@@ -9,18 +9,23 @@ Tabuada de 5:
 
 let number = document.getElementById('number');
 let res = document.getElementById('res');
-let total = 0;
+let displayAnswer;
+let text;
 
+button.addEventListener("click", (e) => {
 
-    button.addEventListener("click", (e) => {
-        for (let i = 1; i <= 10; i++) {
+    let total;
 
-            total = number.value * i;
+    for (let i = 1; i <= 10; i++) {
 
-            //cria dinamicamente uma tag HTML para exibir um conteudo
-            const answerDisplay = document.createElement("p");
-            const text = document.createTextNode(`${number.value} x ${i} = ${total} `)
-            answerDisplay.appendChild(text);
-            document.body.insertBefore(answerDisplay, res);
-        }
-    })
+        total = number.value * i;
+
+        //cria dinamicamente uma tag HTML para exibir um conteudo
+        displayAnswer = document.createElement("p");
+        text = document.createTextNode(`${number.value} x ${i} = ${total} `)
+        displayAnswer.appendChild(text);
+        document.body.insertBefore(displayAnswer, res);
+    }
+    displayAnswer = document.elemen
+})
+

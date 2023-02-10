@@ -1,0 +1,12 @@
+body{
+    display: flex; 
+    flex-direction:column; 
+    justify-content: center; 
+    align-items: center;
+}
+#button{
+    width: 70px; 
+    background-color: transparent; 
+    padding:5px 10px; 
+    border: 1px solid green;
+}

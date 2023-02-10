@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+margin-bottom: 6px;
+}
+
+p {
+    font-size: 12px;
+    margin: 2px;
+}
+
+label {
+    font-size: 15px;
+}
+input{
+    text-align: right;
+}
+
+button {
+    background-color: transparent;
+    border-radius: 2px;
+    padding: 2.4px 5px;
+    border: 1px solid gray
+}

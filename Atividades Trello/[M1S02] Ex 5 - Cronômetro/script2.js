@@ -4,18 +4,22 @@ imprima um texto: 'Seu tempo acabou!! Tente novamente!!'. */
 let res = document.getElementById('res')
 let timer = 0;
 let interval;
+const btn = document.querySelector("#button")
 
+btn.addEventListener("click", () => {
 
-function iniciar() {
+    interval = setInterval(botao, 1000);
+    
+})
+
+function botao(){
+
     if (timer <=10 ) {
-        res.innerHTML = timer++ 
+        res.innerHTML = timer
+        timer ++
+        console.log( timer)
     } else {
         res.innerHTML = 'Seu tempo acabou!! Tente novamente!!'
         clearTimeout(interval)
-        timer=0
     }
-}
-
-function button(){
- interval = setInterval(iniciar, 1000);
 }
