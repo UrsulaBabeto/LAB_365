@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#l2 {
+    margin-left: 20px;
+}
+
+input,
+label {
+    width: 80px;
+    margin: 5px;
+}
+
+button {
+    margin: 10px;
+    background-color: transparent;
+    border: 1px solid rgb(3, 3, 82);
+    border-radius: 2px;
+    padding: 2px 8px;
+}
+
+p {
+    font-size: 12px;
+    margin: 0;
+}
