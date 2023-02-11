@@ -37,7 +37,6 @@ cadastro.addEventListener('click', function () {
     localStorage.setItem('senha', senha)
 
     location.href = "./AppLoginStart_Login.html"
-
   }
 })
 
@@ -45,21 +44,20 @@ function btn() {
   let idStorage = localStorage.getItem('identificacao');
   let passwordStorage = localStorage.getItem('senha');
 
+  if (idStorage == id.value && passwordStorage == password.value) {
+    location.href = "./AppLoginStart_ContentPage.html"
+  } else {
+    res.innerHTML = "Usuário ou senha invalidos, tente novamente!";
+  }
   if (id.value == "" || password.value == "") {
     let emptyUser = confirm("Campo vazio, gostaria de cadastrar uma senha?")
     if (emptyUser) {
       location.href = "./AppLoginStart_Cadastro.html"
-    } else {
-      if (idStorage == id.value && passwordStorage == password.value) {
-        location.href = "./AppLoginStart_ContentPage.html"
-      } else {
-        res.innerHTML = "Usuário ou senha invalidos, tente novamente!";
-      }
     }
-  }
+  } 
 }
 
 function out() {
   localStorage.clear()
-  location.href = "./AppLoginStart_Login.html"
+  location.href = "./AppLoginStart_Cadastro.html"
 }
