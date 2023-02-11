@@ -24,7 +24,7 @@ acesso: window.logalStorage texto tipo JSON
 localStorage.setItem('name','Ursula') - seta informações
 const dado = localStorage.getItem('name') - busca informação
 localStorage.removeItem('name') - apaga o valor da chave
-localStorage.clear() - apaga todos os dados armazenados no lacalStorage
+localStorage.clear() - apaga todos os dados armazenados no localStorage
 
 
 Atraso e Intervalo
