@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pr-BR">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -16,15 +16,15 @@
     <div class="container">
         <label id="l2"> Valor:</label>
         <input type="number" name="" id="price"><br>
-        <label id="l2"> Dinheiro:</label>
-        <input type="number" name="" id="payment"><br>
     </div>
-
-    <button onclick="Calcular()" id="calcular">Calcular</button>
-    
+    <div>
+        <button onclick="add()">Adicionar</button>
+        <button id="calcular">Finalizar Compra</button>
+    </div>
     <p id="nameDisplay"></p>
-    <p id="numberDisplay"></p>    
-    <p id="showAnswer"></p>    
+    <ol id="list"></ol>
+    <p id="totalDisplay"></p>
+    <p id="showNewTotal"></p>
 
     <script src="./script.js"></script>
 </body>

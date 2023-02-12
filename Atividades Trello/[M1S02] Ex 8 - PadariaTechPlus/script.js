@@ -13,34 +13,41 @@ Total: R$ 9.00
 Dinheiro: R$ 20.00
 Troco: R$ 11.00
 ...
-*/
+ */
+
 
 let price = document.querySelector('#price');
-let showDisplay = document.querySelector('#showDisplay');
-let payment = document.querySelector('#payment');
+let list = document.querySelector('#list');
+let totalDisplay = document.querySelector('#totalDisplay');
+let showNewTotal = document.querySelector('#showNewTotal');
 
+let total = 0
+
+function add() {
+
+    let newPrice = Number(price.value)
+    total += newPrice;
+
+    let displayAnswer = document.createElement("li");
+    let text = document.createTextNode(`Produto:  ${newPrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} `)
+    displayAnswer.appendChild(text);
+    displayAnswer.style.fontSize = '12px';
+    list.appendChild(displayAnswer);
+    
+    totalDisplay.innerHTML = `Total: ${total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`
+}
 
 calcular.addEventListener('click', () => {
 
-    for (let i = 1; i <= 5; i++) {
-        let total = i * price.value;
-
-        newTotal = total.toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL'
-        })
-        /*console.log(newTotal)
-          let displayAnswer = document.createElement("p");
-        let text = document.createTextNode(`Produto ${i}:  ${newTotal} `)
-        displayAnswer.appendChild(text);
-        d ocument.body.insertBefore(displayAnswer, showDisplay);
-   */
+    let money = prompt('Qual o valor para pagamento?')
+    let formatedMoney = money.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+    if (money > 0 && money >= total) {
+        let change = money - total;
+        let formatedChange = change.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+        showNewTotal.innerHTML = `Pagamento  ${formatedMoney} :<br>
+                                  Troco:     ${formatedChange}`
+    } else {
+        showNewTotal.innerHTML = "VALOR INVALIDO!"
     }
-let paymentValue = payment.value
-    
-        payment.addEventListener('change', function=(a,b) => {
-            paymentValue - newTotal
-            console.log(change)
-        })
-    
-})
+
+}) 
