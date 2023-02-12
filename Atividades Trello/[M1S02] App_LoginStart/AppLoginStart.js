@@ -15,15 +15,19 @@ Faça com que o usuário possa alterar informações da conta, que serão salvas
 localStorage, como url da imagem de perfil, e-mail e nome.
  */
 
-
-let cadastro = document.querySelector("#Cadastrar");
-
 let id = document.querySelector("#id");
 let password = document.querySelector("#password");
+let mail = document.querySelector("#email");
 let res = document.querySelector("#res");
 
 let identificacao = '';
 let senha = '';
+let email = '';
+
+
+//PAGINA DE CADASTRO
+
+let cadastro = document.querySelector("#Cadastrar");
 
 cadastro.addEventListener('click', function () {
   if (id.value == "" || password.value == "") {
@@ -31,15 +35,19 @@ cadastro.addEventListener('click', function () {
   } else {
     identificacao = id.value;
     senha = password.value;
-    console.log(identificacao)
-
-    localStorage.setItem('identificacao', identificacao)
-    localStorage.setItem('senha', senha)
+    email = mail.value;
+    let image = document.createElement("img")
+    img = image
+    localStorage.setItem('identificacao', identificacao);
+    localStorage.setItem('email', email);
+    localStorage.setItem('image', img);
+    localStorage.setItem('senha', senha);
 
     location.href = "./AppLoginStart_Login.html"
   }
 })
 
+//PAGINA DE LOGIN, 
 function btn() {
   let idStorage = localStorage.getItem('identificacao');
   let passwordStorage = localStorage.getItem('senha');
@@ -54,10 +62,44 @@ function btn() {
     if (emptyUser) {
       location.href = "./AppLoginStart_Cadastro.html"
     }
-  } 
+  }
 }
 
+//PAGINA DE LOGOUT LIMPANDO DADOS DO LOCALSTORAGE
 function out() {
   localStorage.clear()
   location.href = "./AppLoginStart_Cadastro.html"
 }
+
+
+//PAGINA DE ALTERAR DADOS
+function alteraDados() {
+  location.href = "./AppLoginStart_AlterarDados.html"
+  email = mail.value;
+  let idStorage = localStorage.getItem('identificacao');
+  let passwordStorage = localStorage.getItem('senha');
+  let emailStorage = localStorage.getItem('email');
+  let imageStorage = localStorage.getItem('img');
+  localStorage.setItem(idStorage, identificacao);
+  localStorage.setItem(passwordStorage, senha);
+  localStorage.setItem(emailStorage, email);
+  localStorage.setItem(imageStorage, img);
+}
+
+//ALTERA IMAGEM
+
+const inputImg = document.querySelector("#inputImg");
+const avatar = document.querySelector("#avatar");
+const changePhoto = document.querySelector("#changePhoto");
+
+avatar.addEventListener("click", () => {
+  inputImg.click()
+})
+
+changePhoto.addEventListener("click", function () {
+  let reader = new FileReader(); //instancia o objeto FileReader que é necessário para o upload. 
+  reader.readAsDataURL(inputImg.files[0]); // Pega o arquivo armazenado pelo input e transforma em URL 
+  reader.onload = function () {
+  avatar.src = reader.result; //Faz o carregamento e Atribui o resultado do reader no profileImage(IMG) 
+  };
+})

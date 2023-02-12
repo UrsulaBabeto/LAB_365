@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
 }
+
 .container {
   height: 100vh;
   width: 100wh;
@@ -10,6 +11,7 @@
   justify-content: center;
   background-color: #4b4b4b;
 }
+
 .content {
   display: flex;
   flex-direction: column;
@@ -20,10 +22,10 @@
   padding: 20px;
   background: rgb(0, 0, 0);
   background: radial-gradient(circle, rgba(0, 0, 0, 1) 31%,
-    rgba(14, 2, 98, 0.9853181076672104) 100% );
+      rgba(14, 2, 98, 0.9853181076672104) 100%);
   color: #fff;
   border-radius: 5px;
-  gap:4px;
+  gap: 4px;
 }
 
 h3 {
@@ -31,12 +33,20 @@ h3 {
   padding: 3px;
   margin: 3px;
 }
-input{
-    width:200px;
+
+input {
+  width: 200px;
 }
 
-button, a {
-  margin-top:10px;
+.button {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+
+button,
+a {
+  margin-top: 10px;
   color: #fff;
   background-color: transparent;
   border: none;
@@ -46,6 +56,22 @@ button, a {
   text-decoration: none;
 }
 
-button:hover, a:hover {
+
+button:hover,
+a:hover {
   border: 1.2px solid #fff;
+}
+/* 
+picture = label 
+picture__input = input
+picture__image = span*/
+
+#avatar{
+max-width: 60px;
+height: 60px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+
 }
