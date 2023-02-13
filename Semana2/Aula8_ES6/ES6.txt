@@ -13,8 +13,6 @@ nao utiliza a palavra function e nem retur
 utilizada como block body onde ha um corpo para a logica da funçao com retorno explicito
 utilizada como concise body, onde o retorno é implicito e nao ha corpo
 
-https://prod.liveshare.vsengsaas.visualstudio.com/join?9644EAF1FFB99C5BA1397B2EC5F164734744
-
 default parameters - é possivel definir valores default para os parametros
 ex function soma(n1,n2,n3=2){
 return n1+n2+n3}
