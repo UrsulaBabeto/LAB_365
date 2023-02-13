@@ -87,19 +87,25 @@ function alteraDados() {
 }
 
 //ALTERA IMAGEM
+const inputFile = document.querySelector('#picture_input')
+const pictureImage = document.querySelector('.picture_image');
 
-const inputImg = document.querySelector("#inputImg");
-const avatar = document.querySelector("#avatar");
-const changePhoto = document.querySelector("#changePhoto");
+inputFile.addEventListener('change', function(e){
+    const inputTarget = e.target;
+    const file = inputTarget.files[0];
 
-avatar.addEventListener("click", () => {
-  inputImg.click()
-})
+    if(file){
+        const reader = new FileReader();
+        reader.addEventListener('load',function(e){
+            const thisReader = e.target;
 
-changePhoto.addEventListener("click", function () {
-  let reader = new FileReader(); //instancia o objeto FileReader que é necessário para o upload. 
-  reader.readAsDataURL(inputImg.files[0]); // Pega o arquivo armazenado pelo input e transforma em URL 
-  reader.onload = function () {
-  avatar.src = reader.result; //Faz o carregamento e Atribui o resultado do reader no profileImage(IMG) 
-  };
+            const img = document.createElement('img');
+            img.src = thisReader.result;
+            img.classList.add('picture_img');
+            pictureImage.innerHTML ="";
+
+            pictureImage.appendChild(img)
+        })
+        reader.readAsDataURL(file);
+     }
 })
