@@ -13,11 +13,13 @@
     <div class="container">
         <div class="content">
             <h3>ALTERAR DADOS</h3>
-            
-            <input id="inputImg" type="file" style="display: none;"></input>
-            <img id="avatar" src="./fotoDefault.jpg" alt="">
-            <button type="button" id="changePhoto">Change photo</button>
-            
+
+            <label for="picture_input" class="picture" tabindex="0">
+                <span class="picture_image"><img class="picture_img"
+                        src="https://randomuser.me/api/portraits/lego/6.jpg" alt=""></span>
+            </label>
+            <input type="file" accept="image/*" id="picture_input">
+
             <input type="text" id="id" placeholder="Usuário">
             <input type="email" id="email" placeholder="email@email.com">
             <input type="password" id="password" placeholder="Senha.123">

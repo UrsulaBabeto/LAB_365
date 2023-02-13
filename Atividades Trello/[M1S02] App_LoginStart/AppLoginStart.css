@@ -61,17 +61,41 @@ button:hover,
 a:hover {
   border: 1.2px solid #fff;
 }
-/* 
-picture = label 
-picture__input = input
-picture__image = span*/
+#picture_input {
+  display: none;
 
-#avatar{
-max-width: 60px;
-height: 60px;
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
+}
 
+.picture {
+  width: 60px;
+  height: 60px;
+  background: #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  border: 1.5px solid #aaa;
+  font-size: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+}
+
+.picture:hover {
+  color: #555;
+  border: 2px dashed #555;
+}
+
+.picture:active {
+  background: #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+
+.picture_img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
