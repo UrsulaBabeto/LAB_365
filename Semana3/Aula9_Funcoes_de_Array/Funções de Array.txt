@@ -1,0 +1,7 @@
+Funções de Array
+
+criadas para facilitar a manipulação de arrays
+
+adicionar valor no começo = .unshift
+adicionar valor no final = .push
+adicionar valor no meio = .splice(posiçãoParaColocarOItem, defineSeVaiOuNãoExcluirComNumero "0", oQueQueremosAdicionar)

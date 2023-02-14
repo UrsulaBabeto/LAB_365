@@ -1,0 +1,17 @@
+Funções de Array
+
+criadas para facilitar a manipulação de arrays
+
+adicionar valor no começo = .unshift('')
+adicionar valor no final = .push('')
+adicionar valor no meio = .splice(IndexParaColocarOItem, defineSeVaiOuNãoExcluirComNumeroEQuantosSeraoExcluidos "0", oQueQueremosAdicionar)
+
+remover valor no final = .pop()
+remover valor no inicio = .shift()
+
+forEach é utilizado para percorrer uma lista sem retornar um valor
+.forEach(()+>{})
+
+.map(()+>{}) percorre uma lista e retorna valores, voce pode manipular os valores e 
+criar uma nova lista modificada e a lista original não é afetada
+
