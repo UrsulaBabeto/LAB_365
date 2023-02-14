@@ -15,3 +15,11 @@ forEach é utilizado para percorrer uma lista sem retornar um valor
 .map(()+>{}) percorre uma lista e retorna valores, voce pode manipular os valores e 
 criar uma nova lista modificada e a lista original não é afetada
 
+.filter() percorre array, para cada item faz uma condiçao
+se atender a condição ele entra em um novo array
+let numeros=[3,2,44,55,1]
+let numerosMenorQueDez = numeros.filter((numeros)=>{
+	return numeros<10
+})
+
+.every() elementos do array passam por uma condição
