@@ -1,11 +1,15 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+div {
     display: flex;
+    flex-direction: column;
     height: 100vh;
     align-items: center;
     justify-content: center;
 }
 
+
 h3 {
+    font-family: 'Dancing Script', cursive;
     font-size: 40px;
     background: linear-gradient(to right,
             red 25%,
@@ -16,9 +20,17 @@ h3 {
             rgb(66, 2, 85) 83%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    
 }
 
 button {
-    padding: 7px 14px;
-    background-color: transparent;
+    font-family:'Lucida Sans', 'Lucida Sans Regular','sans-serif';
+    border: none;
+    background-color: transparent; 
+    font-size: 20px;  
+    color: rgb(1, 33, 61);
+}
+button:hover{
+    font-size: x-large;
+    text-shadow: 0 0 3px;
 }

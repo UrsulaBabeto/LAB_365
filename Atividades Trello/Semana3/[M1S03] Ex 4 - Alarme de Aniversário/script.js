@@ -8,23 +8,30 @@ const diffInMs = new Date(d2) - new Date(d1)
 const diffInDays = diffInMs / (1000 60 60 * 24);
 console.log(diffInDays) // 38 */
 
-let resp = document.querySelector('#resposta')
-let resp1 = document.querySelector('#resposta1')
-let interval;
+let resposta = document.querySelector('#resposta');
+let resposta1 = document.querySelector('#resposta1');
 
-const current = '2023/02/15'
-const data = '2023/02/15'
 
-const diffInMs = new Date(data) - new Date(current)
-const diffInDays = diffInMs / (1000 * 60 * 60 * 24)
+const currentData = '2023/02/15';
+const birthday = '2023/03/15';
 
-function iniciar(){
-    if (data) {
-        resp.innerHtml = "FELIZ ANIVERSARIO"
-        clearTimeout(interval)
+const diffInMs = new Date(birthday) - new Date(currentData);
+const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
+
+let interval = setInterval(iniciar, 10000);//para um dia sera 86400
+function iniciar() {
+
+    
+    let component = document.createElement("p")
+
+    if (diffInMs == 0) {
+        component.innerText = ("FELIZ ANIVERSARIO")
+        resposta.appendChild(component)  
+        setTimeout( interval)   
     } else {
-        resp1.innerHtml =`Faltam ${diffInDays} dias para oseu aniversário`
-    }
-    interval = setInterval(iniciar, 1000);
+        component.innerText =(`Faltam ${diffInDays} dias para o seu aniversário`)
+        resposta1.appendChild(component)      
+    }   
 }
-console.log(interval)
+
+    
