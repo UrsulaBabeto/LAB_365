@@ -12,12 +12,15 @@ seguir: api.whatsapp.com/send?phone=5511012345678&text=Oi%20Devs */
 
 let text = document.querySelector('#text');
 let tel = document.querySelector('#tel');
+let res = document.querySelector('#res');
 
 function enviar() {
     let text1 = text.value
     let newText = text1.split(" ")
- 
-     document.createElement("a");
-     location.href = `https://api.whatsapp.com/send/?phone=55${tel.value}&text=${newText.join('%20')}`
 
+    res.innerHTML = `https://api.whatsapp.com/send/?phone=55${tel.value}&text=${newText.join('%20')}`
+    document.createElement("a");
+    setTimeout(() => {
+        location.href = `https://api.whatsapp.com/send/?phone=55${tel.value}&text=${newText.join('%20')}`
+    }, 5000)
 }
