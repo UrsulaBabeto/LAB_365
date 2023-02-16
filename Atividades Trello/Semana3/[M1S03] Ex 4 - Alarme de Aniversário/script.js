@@ -13,7 +13,7 @@ let resposta1 = document.querySelector('#resposta1');
 
 
 const currentData = '2023/02/15';
-const birthday = '2023/03/15';
+const birthday = '2023/02/15';
 
 const diffInMs = new Date(birthday) - new Date(currentData);
 const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
@@ -25,13 +25,13 @@ function iniciar() {
     let component = document.createElement("p")
 
     if (diffInMs == 0) {
-        component.innerText = ("FELIZ ANIVERSARIO")
+        component.innerText = ("Feliz Aniversário")
         resposta.appendChild(component)  
-        setTimeout( interval)   
+        clearTimeout(interval)  
     } else {
         component.innerText =(`Faltam ${diffInDays} dias para o seu aniversário`)
         resposta1.appendChild(component)      
-    }   
+    }  
 }
 
     
