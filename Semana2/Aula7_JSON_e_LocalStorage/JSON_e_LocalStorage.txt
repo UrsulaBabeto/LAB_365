@@ -1,4 +1,4 @@
-objetos sao parecidos com vetores. damos nomes aos indicis utilizando chave e valor
+objetos sao parecidos com vetores. damos nomes aos indices utilizando chave e valor
 chaves: indices de um objeto. Qunado insrimos um item em objeto criamos um par chave-valor
 o acesso se da atraves de um "." apos o nome do vetor ex.: pessoa.nome ou pessoa['nome']
 
@@ -6,7 +6,7 @@ o acesso se da atraves de um "." apos o nome do vetor ex.: pessoa.nome ou pessoa
 JSON
 javaScript Object Notation
 -representação de uma estrutura de objetos em javascript em forma de texto baseadas e pares de chave-valor
--envia dados do backk-end para o front-end
+-envia dados do back-end para o front-end
 -manipula estrutura de dados com texto
 -facil de ler e entender
 -processamento leve e de facil interpretação

@@ -2,6 +2,44 @@ Funções de Array
 
 criadas para facilitar a manipulação de arrays
 
-adicionar valor no começo = .unshift
-adicionar valor no final = .push
-adicionar valor no meio = .splice(posiçãoParaColocarOItem, defineSeVaiOuNãoExcluirComNumero "0", oQueQueremosAdicionar)
+adicionar valor no começo = .unshift('')
+adicionar valor no final = .push('')
+adicionar valor no meio = .splice(IndexParaColocarOItem, defineSeVaiOuNãoExcluirComNumeroEQuantosSeraoExcluidos "0", oQueQueremosAdicionar)
+
+remover valor no final = .pop()
+remover valor no inicio = .shift()
+
+forEach é utilizado para percorrer uma lista sem retornar um valor
+.forEach(()=>{})
+
+.map(()=>{}) percorre uma lista e retorna valores, voce pode manipular os valores e 
+criar uma nova lista modificada e a lista original não é afetada
+
+.filter() percorre array, para cada item faz uma condiçao
+se atender a condição ele entra em um novo array
+let numeros=[3,2,44,55,1]
+let numerosMenorQueDez = numeros.filter((numeros)=>{
+	return numeros<10
+})
+
+.find() retorna primeiro elemento encontrado que corresponda a pesquisa
+
+.every() elementos do array passam por uma condição e retorna um booleano
+
+.reduce
+aceita dois parametros, o total e o valor atual
+passa por cada numero do array como se fosse um laço for
+
+const carteiras = [20.64, 43.76,13.88,33.54,98.01]
+const carteiraTotal =carteiras.reduce((acc, valor)=>{
+	return acc +=valor
+})
+
+const carteiras = [20.64, 43.76,13.88,33.54,98.01]
+const carteiraTotal =carteiras.reduce((acc, valor, indice, array)=>{
+	return acc +=valor
+if(indice === array.length-1){
+return acc/array.length
+}else{
+return acc
+})

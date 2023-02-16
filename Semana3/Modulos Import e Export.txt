@@ -1,0 +1,10 @@
+Módulos export import
+
+divisão de codigos
+é necessario acrescentar na tag <script type="module>
+export na frente do item a ser enviado
+e import dentro do arquivo que vai receber
+import {nomeVariavelaSerImportada} from './caminho.js'
+
+exportaçao padrao exporta o bloco de codigo sem atribuir um valor
+um modulo so possui uma funcao default

@@ -35,3 +35,22 @@ let verdadeirosAprovador = aprovados.filter((aluno) => {
 //.every()
 const numeros2 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 console.log(numeros2.every((num) = num < 40))//arrowfunction com retorno explicito pq nao usa chaves
+
+//.reduce()
+
+ const carteiras = [20.64, 43.76, 13.88, 33.54, 98.01]
+const carteiraTotal = carteiras.reduce((acc, valor) => {
+    return acc += valor
+}) 
+
+const carteiras1 = [20.64, 43.76, 13.88, 33.54, 98.01]
+const carteiraTotal1 = carteiras.reduce((acc, valor, indice, array) => {
+    acc += valor
+     console.log(acc)
+    if (indice === array.length - 1) {
+       return acc / array.length
+    } else {
+    return acc
+    }
+})
+console.log(carteiraTotal1)

@@ -1,0 +1,24 @@
+body {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+h3 {
+    font-size: 40px;
+    background: linear-gradient(to right,
+            red 25%,
+            orange 40%,
+            yellow 50%,
+            green 65%,
+            blue 80%,
+            rgb(66, 2, 85) 83%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+button {
+    padding: 7px 14px;
+    background-color: transparent;
+}
