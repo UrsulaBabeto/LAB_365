@@ -96,16 +96,18 @@ let users = [
 
 ]
 
-let search = document.getElementById('search')
-let res = document.getElementById('res')
-let searchUser = search.value
+let search = document.getElementById('search');
+let res = document.getElementById('res');
 
-function buscar(){
-users.filter((e)=>{
-  if(e.username == searchUser){
-    res.innerHTML = `Usuário: ${e.name}`
-  }else{
-    res.innerHTML = "Usuário não encontrado"
-  }
-})
+
+function buscar() {
+  let searchUser = search.value;
+
+  users.filter((e) => {
+    if (e.username == searchUser) {
+      res.innerHTML = `Usuário: ${e.name}`;
+    } else {
+      res.innerHTML = "Usuário não encontrado";
+    }
+  })
 }
