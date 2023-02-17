@@ -1,0 +1,30 @@
+single thread - executa uma tarefa de cada vez
+multi thread - varias execuções ao mesmo tempo
+
+funções assíncronas, funções realizadas em tempos diferentes da linha do tempo principal
+é returada dio fluxo normal de execução 
+funções síncronas, funções realizadas "linha a linha"
+
+callback - (promessa, quando essa função terminar, isso vai acontecer)função que vai ser executada no futuro
+
+pilha de execução 
+LIFO (last in, first out)-ultimo que entra é o primeiro que sai
+FIFO (first in, first out)- primeiro que entra é o primeiro que sai
+
+promises- é um objeto especial que representa uma evential conclusão ou falha de uma operação que foi postergada
+toda promessa pode ser resolvida ou rejeitada
+new Promise((resolve,reject)=>{...if(true){resolve()}else{reject()}})
+estados da promessa:
+pending - estado inicial
+fulffilled - executada
+reject - rejeitada
+para capturar o valor resultante da promise é utilizado um metodo chado "then" que recebe dois argumentos "onResolve" e "onReject"
+as promises vão pra uma fila microtaks quee
+erros sao capturados pelo .catch em resposta ao .then
+
+Async/await-
+simplificações de promises e tornam os codigos mais simples e faceis de ler
+
+
+
+fetch-
