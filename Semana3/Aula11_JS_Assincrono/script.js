@@ -48,3 +48,17 @@ async function login(user, password) {
     }
 }
 login('andressa', '1234')
+
+async function buscarDados(){
+    try{
+    variable.innerText = 'carregando...'
+    const response = await fetch('api.github/users/UrsulaBabeto')
+    const dados = await response.json()
+    variable.innerText = dados.name
+    }catch(e){
+    
+    }finally{
+    
+    }
+}
+    buscaDados()
