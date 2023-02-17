@@ -7,15 +7,17 @@ let textError = document.querySelector('#textError')
 let userData = document.querySelector('#userData')
 let bio = document.querySelector('#bio')
 let repo = document.querySelector('#repo')
+let img = document.querySelector('#img')
 
 async function findData() {
     try {
         const response = await fetch('https://api.github.com/users/UrsulaBabeto');
         const data = await response.json();
-console.log(data)
-        userData.innerText=data.name;
-        bio.innerText=data.bio;
-        repo.innerText=data.html_url;
+
+        userData.innerText = data.name;
+        bio.innerText = data.bio;
+        repo.innerText = data.html_url;
+        img.innerHTML = `<img src="${data.avatar_url}".jpg/>`
     } catch (e) {
         textError.innerText = "Erro"
     }

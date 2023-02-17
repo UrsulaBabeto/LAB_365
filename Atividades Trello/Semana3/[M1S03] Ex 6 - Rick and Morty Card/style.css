@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Rajdhani:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Lacquer&family=Rajdhani:wght@300&family=Sedgwick+Ave+Display&family=Splash&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #160440;
+    flex-direction: column;
+}
+
+.container {
+    background-color: #FCE46D;
+    color:#A1140A ;
+    padding: 15px;
+    box-shadow: 8px 12px #A1140A;
+    margin-top: 20px;
+}
+
+h1 {
+    font-family: 'Creepster', cursive;
+    color: #08C952; 
+    text-shadow: 2px 2px 1px #1cf8f8;
+    padding: 10px;
+}
+
+p {
+    font-family: 'Rajdhani', sans-serif;
+}
+
+b {
+    color: #08C952;
+    text-shadow: 0 0 1px #160440;
+}
+img{
+    border-radius: 50%;;
+}
