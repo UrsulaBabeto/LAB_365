@@ -26,15 +26,3 @@ Async/await-
 simplificações de promises e tornam os codigos mais simples e faceis de ler
 
 fetch-
-async function buscarDados(){
-try{
-variable.innerText = 'carregando...'
-const response = await fetch('api.github/users/UrsulaBabeto')
-const dados = await response.json()
-variable.innerText = bodyW.name
-}catch(e){
-
-}finally{
-
-}
-buscaDados()
