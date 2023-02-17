@@ -9,7 +9,7 @@ let img = document.querySelector('#img')
 async function rickAndMortyApi() {
     try {
 
-        const response = await fetch('https://rickandmortyapi.com/api/character/1')
+        const response = await fetch('https://rickandmortyapi.com/api/character/11')
         const data = await response.json()
         console.log(data)
 
@@ -20,7 +20,7 @@ async function rickAndMortyApi() {
  <b>Status:</b> ${data.status}<br>
  <b>Origin:</b> ${data.origin.name}<br> 
  `
- img.innerHTML = "<img src=" + data?.image + ".jpg>"
+ img.src = data.image 
     }
     catch (e) {
 

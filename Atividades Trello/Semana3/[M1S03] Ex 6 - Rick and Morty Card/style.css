@@ -22,6 +22,10 @@ body {
     padding: 15px;
     box-shadow: 8px 12px #A1140A;
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
@@ -40,5 +44,9 @@ b {
     text-shadow: 0 0 1px #160440;
 }
 img{
-    border-radius: 50%;;
+    border-radius: 50%;
+    max-width: 100px;
+    box-shadow: 0 0 4px;
+    padding: 1px;
+    margin-bottom: 10px;
 }
