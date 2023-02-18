@@ -17,7 +17,8 @@ async function findData() {
         userData.innerText = data.name;
         bio.innerText = data.bio;
         repo.innerText = data.html_url;
-        img.innerHTML = `<img src="${data.avatar_url}".jpg/>`
+        img.src = data.avatar_url
+       
     } catch (e) {
         textError.innerText = "Erro"
     }
