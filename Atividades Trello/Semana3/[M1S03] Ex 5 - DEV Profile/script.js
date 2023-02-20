@@ -14,10 +14,10 @@ async function findData() {
         const response = await fetch('https://api.github.com/users/UrsulaBabeto');
         const data = await response.json();
 
-        userData.innerText = data.name;
-        bio.innerText = data.bio;
-        repo.innerText = data.html_url;
-        img.src = data.avatar_url
+        userData.innerText = data?.name;
+        bio.innerText = data?.bio;
+        repo.innerText = data?.html_url;
+        img.src = data?.avatar_url
        
     } catch (e) {
         textError.innerText = "Erro"

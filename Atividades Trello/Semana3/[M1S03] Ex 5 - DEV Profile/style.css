@@ -1,0 +1,73 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.container {
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+    background-color: #fff;
+    width: 350px;
+    box-shadow: 3px 0 8px #f5d4c3;
+
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+img {
+    border-radius: 50%;
+    width: 90px;
+    box-shadow: 0.5px 0 3px #f8cbb5;
+    margin-top: 20px;
+}
+
+#userData {
+    font-size: 25px;
+    color: #1b2c5e;
+    margin: 10px;
+    text-shadow: 1px 0 1px #4664be;
+    width: 170px;
+}
+
+#bio {
+    font-size: 12px;
+    color: #1b2c5e;
+    max-width: 250px;
+}
+
+#repo {
+    font-size: 12px;
+    color: #1b2c5e;
+    text-shadow: 1px 1px 1px #f8cbb5;
+}
+
+#repo:hover {
+    font-size: small;
+    color: #de1b36;
+}
+
+.socialMedia {
+    margin: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#lkdIn,#insta {
+    color: #1b2c5e;
+    padding: 5px;
+    transform: scale(1);
+    text-shadow: 1px 1px 1px #f8cbb5;
+}
+
+#lkdIn:hover, #insta:hover {
+    color: #de1b36;
+    transform: scale(1.1);
+}
