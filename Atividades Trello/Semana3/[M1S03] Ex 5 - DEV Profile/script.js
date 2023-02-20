@@ -16,7 +16,8 @@ async function findData() {
 
         userData.innerText = data?.name;
         bio.innerText = data?.bio;
-        repo.innerText = data?.html_url;
+        repo.innerHTML = data?.html_url;
+    
         img.src = data?.avatar_url
        
     } catch (e) {

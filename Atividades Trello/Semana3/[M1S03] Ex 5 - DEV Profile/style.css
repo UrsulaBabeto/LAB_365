@@ -26,14 +26,14 @@ img {
     border-radius: 50%;
     width: 90px;
     box-shadow: 0.5px 0 3px #f8cbb5;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 #userData {
     font-size: 25px;
     color: #1b2c5e;
     margin: 10px;
-    text-shadow: 1px 0 1px #4664be;
+    text-shadow: 1px 1px 1px #f8cbb5;
     width: 170px;
 }
 
@@ -55,14 +55,12 @@ img {
 }
 
 .socialMedia {
-    margin: 10px;
     display: flex;
     justify-content: space-evenly;
 }
 
 #lkdIn,#insta {
     color: #1b2c5e;
-    padding: 5px;
     transform: scale(1);
     text-shadow: 1px 1px 1px #f8cbb5;
 }
