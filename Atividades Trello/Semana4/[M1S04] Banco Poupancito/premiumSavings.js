@@ -3,7 +3,7 @@ juros melhor. Crie uma classe que herde atributos e métodos da classe poupanca 
 modifique o método atualizaJuros (polimorfismo), aumentando o a taxa para 1.2% toda a vez que o método 
 for chamado. */
 
-import { Savings } from "../[M1S04] Ex3 - Banco Poupancito 2/script.js";
+import { Savings } from './savings.js'
 
 
 export class premiumSavings extends Savings{

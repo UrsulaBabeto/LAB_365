@@ -1,4 +1,4 @@
- export class Conta {
+  export class Conta {
     #saldo;
     #senha;
     constructor(saldo) {
@@ -20,4 +20,4 @@
      let answer = prompt('Valor de saque: R$')
       this.#saldo -= Number(answer);
     }   
-  }
+  } 
