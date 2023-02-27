@@ -9,6 +9,7 @@ export class Savings extends Conta {
         super(saldo, senha)
     }
     atualizaJuros() {
-        alert(`Saldo em conta: R$ ${this.saldo + (this.saldo * 7 / 100)}`);
+        console.log(this.saldo)
+        alert(`Saldo em conta: R$ ${Number(this.saldo) + (Number(this.saldo) * 7 / 100)}`);
     }
 }

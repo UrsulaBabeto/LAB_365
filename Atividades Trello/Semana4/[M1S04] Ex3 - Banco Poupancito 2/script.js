@@ -6,9 +6,10 @@ deposito adiciona valor ao saldo (o usuário deve passar a senha, e ela deve ser
 
 Por fim, instancie um objeto chamado contaCorrente e teste as operações. */
 
-import { Savings } from './conta';
+import { Savings } from './savings.js';
 
-const saving = new Savings(30,1234);
+const saving = new Savings(30);
+let senha = saving.getSenha;
 
 let pin = prompt('Senha:')
 if (pin == senha) {
