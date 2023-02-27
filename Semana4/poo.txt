@@ -1,0 +1,83 @@
+mmostrar energia, boa vontade
+não seja contador de estoria
+qdo questionado sobre outras empresas seja objetivo- o que vc fez,
+nao foque somente no curriculo. Fale sobre o lado pessoal
+
+se conheça
+
+pessoas sao contratadas pelo currisulo e demitidas pelo comportamento
+
+sem energia, cheio de fofocas....
+
+qual o motivo vc saiu da ultima empresa
+quais as principais qualidades
+quais os principais defeitos - defeito resolvido
+porque eu deveria contratar vc
+porque deseha esse cargo
+o que faz quando discordam de vc
+pretensão salarial
+como vc define sucesso
+como vc lida com pressao e estresse
+se vc fosse um animal, qual seria
+
+a media salarial do mercado é em torno de 3000
+
+
+
+POO
+
+
+class Poligono {
+  constructor (altura,largura){
+    this.altura = altura
+    this.largura = largura
+  }
+
+
+
+  get area () {
+    return this.#calcularArea()
+  }
+  set mudarLargura(num) {
+    this.largura = num
+  }
+  #calcularArea () {
+    return this.altura * this.largura
+  }
+}
+let poligono = new Poligono(50,60)
+poligono.mudarLargura = 20
+console.log(poligono.area)
+
+let altura = 50
+let largura = 60
+
+function calcularArea (alt,lar) {
+  return alt* lar
+}
+console.log(calcularArea(50,60))
+const carroDoTales = new Veiculo('azul',100)class Veiculo {
+  constructor(cor,velocidade) {
+    this.cor = cor
+    this.velocidade = velocidade
+  }
+  acelerar ( ) {
+    console.log('o carro chegou a'+this.velocidade+'por hora')
+  }
+  buzinar ( ) {
+    console.log('fom fom')
+  }
+}
+/* class Veiculo {
+  constructor(cor,velocidade) {
+    this.cor = cor
+    this.velocidade = velocidade
+  }
+  acelerar ( ) {
+    console.log('o carro chegou a'+this.velocidade+'por hora')
+  }
+  buzinar ( ) {
+    console.log('fom fom')
+  }
+}
+
