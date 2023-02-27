@@ -56,41 +56,38 @@ Por fim, instancie um objeto chamado contaCorrente e teste as operações. */
   } 
  */
 
-  import { premiumSavings } from "./premiumSavings.js";
+import { premiumSavings } from "./premiumSavings.js";
 const pS = new premiumSavings(30);
 
 let senha = pS.getSenha;
 
 let pin = prompt('Senha:')
 if (pin == senha) {
-    alert(`Saldo atual: R$ ${pS.getSaldo}`);
-    let resp1 = true
-    while (resp1) {
+  alert(`Saldo atual: R$ ${pS.getSaldo}`);
+  let resp1 = true
+  while (resp1) {
 
-        let resp = prompt('1 Deposito \n 2 Saque\n 3 Saldo em conta\n 4 Poupança \n5 Poupança Premium\n 6 Sair ')
-        switch (resp) {
-            case "1":
-                pS.deposito();
-                break;
-            case "2":
-                pS.retirada();
-                break;
-            case "3":
-                pS.mostrarSaldo()
-                break;
-            case "4":
-                pS.atualizaJuros();
-                break;
-            case "5":
-                pS.atualizaJuros();
-                break;
-            case "6":
-                resp1 = false;
-                break;
-            default:
-                break;
-        }
+    let resp = prompt('1 Deposito \n 2 Saque\n 3 Saldo em conta\n 4 Poupança Premium\n 5 Sair ')
+    switch (resp) {
+      case "1":
+        pS.deposito();
+        break;
+      case "2":
+        pS.retirada();
+        break;
+      case "3":
+        pS.mostrarSaldo()
+        break;
+      case "4":
+        pS.atualizaJuros();
+        break;
+      case "5":
+        resp1 = false;
+        break;
+      default:
+        break;
     }
+  }
 } else {
-    throw new Error('ERRO! Senhas Incompatíveis')
+  throw new Error('ERRO! Senhas Incompatíveis')
 }
