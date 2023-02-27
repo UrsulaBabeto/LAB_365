@@ -12,6 +12,6 @@ export class premiumSavings extends Savings{
         super(saldo,senha)
     }
     atualizaJuros(){
-        let saldoTotal = this.saldo + (this.saldo*1.20)
+        return this.saldo + (this.saldo*1.20)
     }
   }

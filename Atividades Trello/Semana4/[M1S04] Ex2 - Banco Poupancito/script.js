@@ -12,12 +12,13 @@ import { Savings } from "../[M1S04] Ex3 - Banco Poupancito 2/script.js";
 import { premiumSavings } from "../[M1S04] Ex4 - Banco Poupancito 3/script.js";
 
 const conta = new Conta(30);
+conta.Savings
 
 let senha = conta.getSenha;
 
 let pin = prompt('Senha:')
 if (pin == senha) {
-    let resp = prompt('Deposito 1;\n Saque 2\n Saldo em conta 3')
+    let resp = prompt('Deposito 1;\n Saque 2\n Saldo em conta 3\n Poupança 4')
 
     switch (resp) {
         case "1":
@@ -31,6 +32,9 @@ if (pin == senha) {
         case "3":
             alert(`Saldo em conta: R$ ${conta.getSaldo}`);
             break;
+            case "4":
+                alert(`Saldo em conta: R$ ${conta.getSaldo}`);
+                break;
 
         default:
             break;
