@@ -1,19 +1,23 @@
-export class Conta {
+ export class Conta {
     #saldo;
-    #password;
-    constructor(saldo, password) {
-        this.#saldo = saldo;
-        this.#password = 12345;
+    #senha;
+    constructor(saldo) {
+      this.#saldo = saldo;
+      this.#senha = 1234;
     }
-
+  
+    get getSenha() {
+      return this.#senha;
+    }
+    get getSaldo() {
+      return this.#saldo;
+    }
     deposito() {
-      for (let i = 0; i < 10; i++) {
-        let answer = prompt('qual o valro a ser depositado?')
-        console.log(this.#saldo += answer)
-        
-      }
+      let answer = prompt('Valor para deposito: R$')
+      this.#saldo += Number(answer)
     }
-    retirada(ret) {
-        console.log(this.#saldo -= ret);
-    }
-}
+    retirada() {
+     let answer = prompt('Valor de saque: R$')
+      this.#saldo -= Number(answer);
+    }   
+  }
