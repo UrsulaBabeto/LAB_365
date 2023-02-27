@@ -3,7 +3,7 @@ juros melhor. Crie uma classe que herde atributos e métodos da classe poupanca 
 modifique o método atualizaJuros (polimorfismo), aumentando o a taxa para 1.2% toda a vez que o método 
 for chamado. */
 
-import { Savings } from './savings.js'
+/* import { Savings } from './savings.js'
 
 
 export class premiumSavings extends Savings{
@@ -14,4 +14,4 @@ export class premiumSavings extends Savings{
     atualizaJuros(){
         return this.saldo + (this.saldo*1.20)
     }
-  }
+  } */

@@ -26,7 +26,7 @@ class Details extends Person {
         this.career = career;
     }
     Career() {
-      document.querySelector('#res').innerHTML = `Ola, eu me chamo ${this.name}, tenho ${this.age} de idade e ${this.height} de altura e sou ${this.career}`
+      document.querySelector('#res').innerHTML = this.apresentar() +" e sou " + this.career;
     }
 }
 
