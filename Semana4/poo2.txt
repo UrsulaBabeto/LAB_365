@@ -1,0 +1,25 @@
+nome sobrenome						email, linkedin,github,cidade-estado-pais
+cargo desenvolvedor de software front-end ou fullstack jr
+	analista de software....
+
+resumo profissional/sobre vc e suas habilidades
+
+hardskills			softskills
+
+workExperience
+
+class Tipo {
+  constructor (altura,largura){
+    this.altura = altura
+    this.largura = largura
+  }
+  static multiply (altura=this.altura,largura=this.largura){
+    this.altura = altura
+    this.largura = largura
+    return this.altura * this.largura
+  }
+}
+
+const multi = new Tipo(2,2)
+//console.log(multi.multiply(2,2))
+console.log(Tipo.multiply(2,2))

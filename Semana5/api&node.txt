@@ -1,0 +1,7 @@
+api 
+conjunto de rotinas e padroes de programação para acesso a um aplicativo ou plataforma baseado na web.
+liga diversas funçoes de um site de maneira que possam ser utilizadas em outras aplicações
+
+node interpreta codigos escritos m js, outra linguagem de programação derivada do js. è voltada ao servidor
+
+npm init -y
