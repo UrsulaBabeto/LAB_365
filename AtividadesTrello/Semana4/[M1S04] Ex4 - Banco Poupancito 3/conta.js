@@ -13,6 +13,10 @@
     get getSaldo() {
       return this.saldo;
     }
+
+    set setSaldo(sld){
+      this.sld = sld;
+    }
     
     deposito() {
       let answer = prompt('Valor para deposito: R$')
