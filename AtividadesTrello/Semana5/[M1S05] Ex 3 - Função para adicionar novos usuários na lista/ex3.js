@@ -8,23 +8,17 @@ Regra 4: Caso se enquadre, nas primeiras 3 regras, retornar um log da nova lista
 
 const list = ['Pedro', 'José', 'Aderbal', 'Danilo', 'Luisa', 'Vitoria'];
 
-function includeName(names) {   
+function includeName(...names) {
 
-    for (const name of list) {
-        if (typeof names !== 'string') {
-            console.error('Valor inválido');
-            return;
-        }
-        if (list.includes(names)) {
-            console.error("O nome " + names + " já existe na lista");
-            return;
-        }
+    for (const name of names) {
+        if (typeof name !== 'string') return console.error('Valor inválido');
+        if (list.includes(name)) return console.warn("O nome " + name + " já existe na lista");
+        list.push(name);
     }
-    list.push(names);
+
+    console.log(list)
 }
 
-includeName('Maria');
-includeName('joao');
+includeName('Maria', 'joao', 'carlos');
 includeName('Pedro');
 includeName(1234);
-console.log(list) 
