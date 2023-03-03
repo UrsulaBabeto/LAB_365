@@ -26,7 +26,7 @@ class Details extends Person {
         this.career = career;
     }
     Career() {
-      document.querySelector('#res').innerHTML = this.apresentar() +" e sou " + this.career;
+      document.querySelector('#res').innerHTML = super.apresentar() +" e sou " + this.career;
     }
 }
 
