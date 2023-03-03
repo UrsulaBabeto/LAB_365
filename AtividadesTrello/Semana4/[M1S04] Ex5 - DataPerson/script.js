@@ -16,7 +16,7 @@ tenho ${altura} de altura e sou ${profissao}’. */
         this.height = height;
     }
     apresentar() {
-        document.querySelector('#res').innerHTML =`Ola, eu me chamo ${this.name}, tenho ${this.age} de idade e ${this.height} de altura`;
+        return `Ola, eu me chamo ${this.name}, tenho ${this.age} de idade e ${this.height} de altura`;
        }
 }
 class Details extends Person {
@@ -26,7 +26,7 @@ class Details extends Person {
         this.career = career;
     }
     Career() {
-      document.querySelector('#res').innerHTML = super.apresentar() +" e sou " + this.career;
+      document.querySelector('#res').innerHTML = this.apresentar() +" e sou " + this.career;
     }
 }
 
