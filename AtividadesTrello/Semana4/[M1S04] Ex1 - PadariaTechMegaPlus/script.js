@@ -60,7 +60,7 @@ class CaixaRegistradora {
                  Total: R$${totalTab}\n
                       Pagamento: R$${pgto}\n
                       Troco: R$${troco}`)
-            totalTab = 0;
+            this.totalTab = 0;
             this.client = '';
         } else {
             alert('Operação invalida')
