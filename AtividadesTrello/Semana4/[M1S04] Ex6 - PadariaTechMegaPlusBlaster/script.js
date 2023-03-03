@@ -1,13 +1,14 @@
+/* O seu Manoel gostou do último aplicativo e agora quer inovar.
 
+Ele quer que você construa a aplicação utilizando orientação a objetos.
+
+Construa uma classe chamada CaixaRegistradora
+Defina um atributo que armazene vários produtos no estoque contendo os seguintes campos: */
 let clientTab = 0;
 let totalTab = 0;
 let total;
 class CaixaRegistradora {
-    dados = [{
-        codigoBarra: Number,
-        preco: Number,
-        nome: String
-    }];
+    dados = [{}];
 
     constructor(codigoBarra, preco, nome) {
         this.dados["codigoBarra"] = codigoBarra;
@@ -25,21 +26,22 @@ class CaixaRegistradora {
                 nome,
                 quantidade,
             })
-            localStorage.setItem("dados", JSON.stringify(dados))
         }
     }
+
     /* Defina um método que inicie o atendimento ao cliente, você deve passar o nome do cliente para iniciar. */
-    openTab() {
-        client = prompt('Digite seu nome:')
+    openTab(client) {
+        this.client = client;
     }
 
     /* Defina um método que receba codigoBarra: number; e quantidade: number; para o seu Manoel conseguir adicionar
      itens na caixa registradora.**Importante: A aplicação só poderá adicionar itens na caixa, se o código de barra dele existir.   */
-    readProduct(codBarra, quantidade) {
+    readProduct(codigoBarra, quantidade) {
         this.dados.filter((e) => {
-            if (e.codigoBarra == codBarra) {
+            if (e.codigoBarra == codigoBarra) {
                 total = e.preco * quantidade;
                 totalTab += total
+                e.quantidade -= quantidade;
             }
         })
         return totalTab
@@ -53,23 +55,30 @@ class CaixaRegistradora {
     /* Defina um método fecharConta, no qual você passa o dinheiro e ele calcula o troco e zera a caixa registradora.*/
     closeTab() {
         let pgto = prompt('Valor para pagamento:')
-        if (pgto > 0) {
+        if (pgto >= 0 && pgto >= totalTab) {
             let troco = pgto - totalTab;
             alert(`${this.client}\n\n
                  Total: R$${totalTab}\n
                       Pagamento: R$${pgto}\n
                       Troco: R$${troco}`)
-            this.total = 0;
+            this.totalTab = 0;
+            this.client = '';
         } else {
             alert('Operação invalida')
         }
     }
+
     /*  -------------------PADARIATECHMEGAPLUSBLASTER--------------------------
     O seu Manoel agora quer mais uma inovação, ele quer poder guardar itens no estoque e quando alguém 
 fizer alguma compra, ele automaticamente seja removido do estoque. Para isso você pode colocar um novo 
 item em cada objeto chamado quantidade. Para salvar os dados, você pode utilizar localStorage. */
-    removeProduct() {
-
+    removeProduct(codigoBarra, quantidade) {
+        this.dados.find((e) => {
+            if (e.codigoBarra === codigoBarra && e.quantidade >= quantidade) {
+                e.quantidade -= quantidade;
+                localStorage.setItem('estoque', this.estoque);
+            }
+        })
     }
 }
 
