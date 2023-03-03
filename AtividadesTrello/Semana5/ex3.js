@@ -6,21 +6,25 @@ Regra 3: Se entre os nomes enviados, receber um valor diferente de uma string, r
 Regra 4: Caso se enquadre, nas primeiras 3 regras, retornar um log da nova lista com os nomes adicionados junto aos anteriores
 */
 
-function includeName(name) {
-    const array = ['Pedro', 'José', 'Aderbal', 'Danilo', 'Luisa', 'Vitoria']
+function includeName(names) {
+    const array = ['Pedro', 'José', 'Aderbal', 'Danilo', 'Luisa', 'Vitoria'];
+    const newList = array.toLowerCase();
 
+    for (const name of newList) {
+        if (typeof name !== 'string') {
+            console.error('Valor inválido encontrado na lista de nomes');
+            return;
+        }
+        if (newList.includes(name)) {
+            console.error("O nome " + name + " já existe na lista");
+            return;
+        }
+        newList.push(name);
+    }
 
-     if (typeof name !== 'string') {
-        console.error('palavra nao reconhecida, tente novamente')
-        return
-    }  
-     array.filter((e) => { e.includes(name) ? "nome ja existente" : array.push(name) }
-    );
-    console.log(array)
+    console.log(newList.join(','));
 }
-    includeName("Pedro");
-     includeName("joao");
-   /*  includeName("paula");
-     includeName("carol");
- */
 
+includeName(['Pedro']);
+includeName(['Maria']);
+includeName(['joao']); 
