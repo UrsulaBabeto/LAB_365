@@ -25,11 +25,11 @@ app.get('/', ((req, res) => {
         .send("Get Funciona")
 }))
 
-app.post('/:nome', (req, res) => {
-    const nome = req.params.nome 
+app.post('/user/:nome', (req, res) => {
+    const nome = req.params.nome
     res.status(201)
         .send("Rota de api criada por: " + nome)
-        console.log("Rota de api criada por: " + nome)
+    console.log("Rota de api criada por: " + nome)
 })
 
 
@@ -40,7 +40,15 @@ Crie uma rota HTTP com express para simular o envio de um objeto pelo corpo
 OBS: utilize a plataforma de API que você preferir. 
 */
 
+app.post('/sendObject', (req, res) => {
+    const obj = req.body;
 
+    res.status(200)
+        .send("json criado")
+    console.log(obj)
+})
+
+// JSON BODY: [ {"name":"Ursula","age":34,"active":true},{"name":"Rod","age":36,"active":false} ]
 
 
 
