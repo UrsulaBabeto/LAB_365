@@ -1,0 +1,14 @@
+get captura dados, listar
+post envia dados, inserir
+put atualiza dados,editar (deleção logica - setar como true or falsse para aparecer ou não no sistema)
+delete deleta dados,excluir
+
+patch edita um unico atributo
+
+1xx informational
+2xx success
+3xx redirection
+4xx client error
+5xx server error
+
+URI - é o que vem depois do caminho URL www.google.com.br/URI....

@@ -15,7 +15,6 @@ function includeName(...names) {
         if (list.includes(name)) return console.warn("O nome " + name + " já existe na lista");
         list.push(name);
     }
-
     console.log(list)
 }
 

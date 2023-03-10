@@ -1,29 +1,3 @@
-mmostrar energia, boa vontade
-não seja contador de estoria
-qdo questionado sobre outras empresas seja objetivo- o que vc fez,
-nao foque somente no curriculo. Fale sobre o lado pessoal
-
-se conheça
-
-pessoas sao contratadas pelo currisulo e demitidas pelo comportamento
-
-sem energia, cheio de fofocas....
-
-qual o motivo vc saiu da ultima empresa
-quais as principais qualidades
-quais os principais defeitos - defeito resolvido
-porque eu deveria contratar vc
-porque deseha esse cargo
-o que faz quando discordam de vc
-pretensão salarial
-como vc define sucesso
-como vc lida com pressao e estresse
-se vc fosse um animal, qual seria
-
-a media salarial do mercado é em torno de 3000
-
-
-
 POO
 
 
@@ -81,3 +55,52 @@ const carroDoTales = new Veiculo('azul',100)class Veiculo {
   }
 }
 
+quase tudo no js é objeto
+todo objeto tem uma herança
+objetos podem herdar ou estender caracteristicas da base
+uma copia de atributos e metodos de outra classe
+
+class filho extends pai{
+super(atributos,pai)
+this.filho=filho
+}
+
+class Pessoa {
+    constructor(nome, idade) {
+        this.nome = nome
+        this.idade = idade
+    }
+    falar() {
+        console.log("ola mundo")
+    }
+}
+
+class Professor extends Pessoa {
+    constructor(nome, idade, materia) {
+        super(nome, idade);
+        this.materia = materia;
+    }
+    
+}
+const su = new Professor('ursula',33,"geografia");
+const ro = new Pessoa('ursula',33,"geografia");
+console.log(su)
+console.log(ro)
+su.falar()
+ro.falar()
+
+class Tipo {
+  constructor (altura,largura){
+    this.altura = altura
+    this.largura = largura
+  }
+  static multiply (altura=this.altura,largura=this.largura){
+    this.altura = altura
+    this.largura = largura
+    return this.altura * this.largura
+  }
+}
+
+const multi = new Tipo(2,2)
+//console.log(multi.multiply(2,2))
+console.log(Tipo.multiply(2,2))
