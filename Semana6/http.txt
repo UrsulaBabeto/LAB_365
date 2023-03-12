@@ -12,3 +12,32 @@ patch edita um unico atributo
 5xx server error
 
 URI - é o que vem depois do caminho URL www.google.com.br/URI....
+
+body de requisição post ou put
+:params é utilizado para get ou delete
+re.params.{identificador}
+
+
+			                 middleware				                      callback
+app.post('/create',(req,res,next)=>{validação para acesso da rota}, (req,res)=>{regras de negocio})
+
+é possivel fazer mais de um middleware com um array
+ [
+    (req,res,next)=>{validação para acesso da rota},
+(req,res,next)=>{validação para acesso da rota},
+(req,res,next)=>{validação para acesso da rota},
+]
+
+para retornar um arquivo HTML importe o path cconst path - require('path')
+console.log(_dirname)
+app.get ... res.sendFile(path.join(_dirname,'/test.txt'))
+
+importar: const nome = require(./caminho)
+const router = express.Router()
+router.get('/lala/:id',nomedoarquivo.nomedometodo); module.exports = router
+controller-functions; module.exports ={}
+
+rotas redirecionam para as funções de callback
+controller contem todas os callbacks
+conexao com api em um outro arquivo
+  

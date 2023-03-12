@@ -44,7 +44,7 @@ app.post('/sendObject', (req, res) => {
     const obj = req.body;
 
     res.status(200)
-        .send("json criado")
+        .json("json criado" + obj)
     console.log(obj)
 })
 
