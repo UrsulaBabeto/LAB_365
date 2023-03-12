@@ -5,20 +5,20 @@ envio de um novo usuário para o banco de dados, e outra para deletar o usuário
 Apenas crie a conexão do servidor node e as rotas em arquivos separados.
 Não será necessária a implementação das funcionalidades; */
 
-const express = require('express');
-const router = require('./routes')
+const express = require("express");
+//const {verify} = require("./middleware");
+const router = require("./routes");
 const app = express();
 
 app.use(express.json());
+//app.use(verify);
 app.use(router);
 
+app.listen(3333, () => {
+  console.log("servidor ON!!");
+});
 
 
-app.listen(3333, (() => {
-  console.log('servidor ON!!')
-}))
-
-//module.exports = router
 
 /* Ex 7 - Criando uma API (parte 2)
 Agora continuando o exercício anterior no módulo de controlador siga as seguintes regras de negócio de cada rota:
@@ -42,7 +42,6 @@ Verifique na url se o id é passado, caso contrário retorne com status 406 com 
 “Está faltando dados para concluir a operação”};
 Caso a operação seja um sucesso, retorne com status 200 o objeto {“mensagem”: “Deletado com sucesso”};
 OBS: lembre de alterar os dados para que passe em todos os testes e sua API esteja 100%. */
-
 
 /* Ex 8 - Criando uma API (parte 3)
 Agora para deixar nossa aplicação do exercício anterior mais completa, na rota de Envio de
