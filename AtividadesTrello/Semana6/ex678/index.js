@@ -6,12 +6,12 @@ Apenas crie a conexão do servidor node e as rotas em arquivos separados.
 Não será necessária a implementação das funcionalidades; */
 
 const express = require("express");
-//const {verify} = require("./middleware");
+const {verify} = require("./middleware");
 const router = require("./routes");
 const app = express();
 
 app.use(express.json());
-//app.use(verify);
+app.use(verify);
 app.use(router);
 
 app.listen(3333, () => {
