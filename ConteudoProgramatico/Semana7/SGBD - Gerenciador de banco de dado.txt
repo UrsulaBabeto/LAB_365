@@ -1,0 +1,14 @@
+SGBD - Gerenciador de banco de dados
+
+GRUPO DE COMANDOS
+DDL (Data Definition Language) - Create, Alter, Drop
+DCL (Data Control Language) - Grant, Revoke, Deny
+DML Data Manipulation Language - Select, Insert, Update, Delete
+
+COLUNAS = ATRIBUTOS
+LINHAS = TUPLAS
+
+CHAVE PRIMARIA (ÚNICA){
+	É uma coluna ou um conjunto de colunas em uma tabela cujos valores identificam exclusivamente uma linha na tabela
+}
+

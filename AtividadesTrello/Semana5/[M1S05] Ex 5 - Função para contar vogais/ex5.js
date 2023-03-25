@@ -20,4 +20,8 @@ function vowels(words) {
     }
     console.log(`A palavra pesquisada é ${word}, o total de vogal na palavra é: ${count}`)}
 
+   /*  function vowels(words) {
+        console.log( words.split('').filter(c => "aeiouAEIOU".includes(c)).length);
+       } */
+
 vowels("abracadabra") 
