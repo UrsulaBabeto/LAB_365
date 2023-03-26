@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Playfair+Display&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 300px; 
+  color:#30302f;
+}
+.content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: linear-gradient(0deg, rgba(225,190,184,1) 21%, rgba(193,254,247,1) 80%);
+}
+h1 {
+  font-family: "Dancing Script", cursive;
+  padding: 20px;
+  text-shadow: 3px 0 4px rgba(225,190,184,1);
+}
+input {
+  outline: none;
+  border: 0;
+  padding: 5px 40px 5px 2px;
+  font-size: 12px;
+  box-shadow: inset 0 -2px 0 #30302f;
+  background-color: transparent;
+  font-family: "Playfair Display", serif;
+}
+input:focus{
+    outline: none;
+    border: 0;
+    transition: all .4s ease;
+    box-shadow: inset 0 -2px 0 rgb(193,254,247,5);
+}
+
+.buttons {
+  padding: 20px ;
+}
+button{
+    padding: 4px 8px;
+    background-color: transparent;
+    border: 1px solid #30302f;
+    box-shadow: 1px 0 2px #30302f;
+    font-size: 12px;
+    font-family: "Playfair Display", serif;
+}
+button:hover{
+    box-shadow: 0 0 3px rgb(193,254,247);
+}
+button:active{
+    font-weight: bold;
+    border: 1px solid #30302f;
+    text-shadow: 0 0 5px rgb(193,254,247);
+    box-shadow: 3px 0 5px rgb(193,254,247);
+}
+#return{
+  padding: 10px;
+}
+#resposta{
+  font:10px "Playfair Display", serif;  
+}

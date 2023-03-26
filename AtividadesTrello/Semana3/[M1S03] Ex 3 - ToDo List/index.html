@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ToDo List</title>
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <h1>Lista de Tarefas</h1>
+        <input type="text" name="" id="text" placeholder="Ex.: compras" />
+        <div class="buttons">
+          <button onclick="adicionar()">Adicionar</button>
+          <button onclick="buscar()">Buscar</button>
+          <button onclick="deletar()">Excluir</button>
+          <button onclick="alterar()">Alterar</button>
+        <div id="return">
+          <ul id="resposta"></ul>
+        </div>
+        </div>
+      </div>
+    
+    </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
