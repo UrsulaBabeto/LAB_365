@@ -7,39 +7,61 @@ deposito adiciona valor ao saldo (o usuário deve passar a senha, e ela deve ser
 Por fim, instancie um objeto chamado contaCorrente e teste as operações. */
 
 import { premiumSavings } from "./premiumSavings.js";
+import { Savings } from "./savings.js";
+
 const pS = new premiumSavings(30);
 
+
+
+let answer = document.querySelector("#res");
+let answer1 = document.querySelector("#res1");
 let senha = pS.getSenha;
 
-let pin = prompt('Senha:')
-if (pin == senha) {
-  alert(`Saldo atual: R$ ${pS.getSaldo}`);
-  let resp1 = true
-  while (resp1) {
 
-    let resp = prompt('1 Deposito \n 2 Saque\n 3 Saldo em conta\n 4 Poupança Premium\n 5 Sair ')
-    switch (resp) {
-      case "1":
-        pS.deposito();
-        break;
-      case "2":
-        pS.retirada();
-        break;
-      case "3":
-        pS.mostrarSaldo()
-        break;
-      case "4":
-        pS.atualizaJuros();
-        pS.setSaldo = atualizaJuros
-        break;
-      case "5":
-        resp1 = false;
-        break;
-      default:
-        break;
-    }
-  }
-} else {
-  throw new Error('ERRO! Senhas Incompatíveis')
+let depositar = document.querySelector("#depositar");
+depositar.addEventListener("click", () => { 
+  verificarSenha();
+  pS.deposito();
+  limparCampos();
+});
+
+let retirar = document.querySelector("#retirar");
+retirar.addEventListener("click", () => {
+  verificarSenha();  
+  pS.retirar();
+  limparCampos();
+});
+
+let mostrarSaldo = document.querySelector("#mostrarSaldo");
+mostrarSaldo.onclick = () => {
+  verificarSenha();
+  pS.mostrarSaldo();
+  limparCampos();
+};
+
+let atualizaJuros1 = document.querySelector("#atualizaJuros1");
+atualizaJuros1.addEventListener("click", () => {
+  verificarSenha();
+  pS.atualizaJuros(); 
+  limparCampos();
+});
+
+let atualizaJuros = document.querySelector("#atualizaJuros");
+atualizaJuros.addEventListener("click", () => {
+  const savings = new Savings(pS.getSaldo);
+  verificarSenha();
+  savings.atualizaJuros();
+  limparCampos();
+});
+
+function verificarSenha() {
+  let pin = prompt("Senha:");
+  if (pin != senha) throw new Error("ERRO! Senhas Incompatíveis");
 }
 
+function limparCampos() {
+  answer.focus();
+  answer1.focus();
+  answer.value = "";
+  answer1.value = "";
+}

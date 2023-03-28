@@ -1,44 +1,39 @@
-  export class Conta {
-    saldo;
-    #senha;
-    
-    constructor(saldo) {
-      this.saldo = saldo;
-      this.#senha = 1234;
-    }
-  
-    get getSenha() {
-      return this.#senha;
-    }
-    get getSaldo() {
-      return this.saldo;
-    }
+export class Conta {
+  saldo;
+  #senha;
+  res = document.querySelector("#res");
+  res1 = document.querySelector("#res1");
 
-    set setSaldo(sld){
-      this.sld = sld;
-    }
-    
-    deposito() {
-      let answer = prompt('Valor para deposito: R$')
-      this.saldo += Number(answer)
-      alert(`Saldo atualizado: R$ ${this.saldo}`);
-    }
-    retirada() {
-     let answer = prompt('Valor de saque: R$')
-      this.saldo -= Number(answer);
-      alert(`Saldo atualizado: R$ ${this.saldo}`);
-    }  
-    
-    mostrarSaldo(){
-      alert(`Saldo em conta: R$ ${this.saldo}`);
-    }
-  }  
+  constructor(saldo) {
+    this.saldo = saldo;
+    this.#senha = 1234;
+  }
 
-  class Savings extends Conta {
-    constructor(saldo, senha) {
-      super(saldo, senha)
+  get getSenha() {
+    return this.#senha;
+  }
+  get getSaldo() {
+    return this.saldo;
+  }
+
+  set setSaldo(sld) {
+    this.saldo = sld;
+  }
+
+  deposito() {
+    this.saldo += Number(res1.value);
+    alert(`Saldo atualizado: R$ ${this.saldo}`);
+  }
+  retirar() {
+    if (this.saldo > res.value) {
+      this.saldo -= Number(res.value);
+      alert(`Saldo atualizado: R$ ${this.saldo}`);
+    } else {
+      alert("Saldo insuficiente");
     }
-    atualizaJuros() {
-       alert(`Saldo em conta: R$ ${this.saldo + (this.saldo * 7 / 100)}`);
-    }
-  } 
+  }
+
+  mostrarSaldo() {
+    alert(`Saldo em conta: R$ ${this.saldo}`);
+  }
+}

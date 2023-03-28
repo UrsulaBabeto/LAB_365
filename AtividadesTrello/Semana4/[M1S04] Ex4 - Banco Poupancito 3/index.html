@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poupancito</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Banco Poupancito</title>
+  </head>
+  <body>
+   <div class="title"> <h1>Banco Poupancito</h1></div>
+   <div class="container">
+    <section>
+      <button id="mostrarSaldo">Saldo</button>
+
+      <label for="">Valor para Saque: R$</label>
+      <input type="number" id="res"></input>
+      <button id="retirar">Saque</button>
+
+     <label for="">Valor para Deposito: R$</label>
+      <input type="number" id="res1"></input> 
+      <button id="depositar">Deposito</button>
+
+      <button id="atualizaJuros">Poupança</button>
+      <button id="atualizaJuros1">Poupança Premium</button>        
+    </section>
+   </div>
     <script type="module" src="./script.js"></script>
-</body>
+  </body>
 </html>
