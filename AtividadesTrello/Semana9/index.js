@@ -16,9 +16,9 @@ app.post('/places', Controller.create)
 app.get('/places',Controller.AllFind)
 app.get('/places/:id',Controller.PKFind)
 //atualizar
-app.put('/places/update:id', Controller.refresh)
+app.put('/places/update/:id', Controller.update)
 //deletar
-app.delete('/places/delete/:id',Controller.erase) 
+app.delete('/places/delete/:id',Controller.deleted) 
 
 app.listen(3333,()=>console.log('Server On'));
 

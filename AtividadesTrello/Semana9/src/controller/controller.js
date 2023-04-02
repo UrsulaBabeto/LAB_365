@@ -54,7 +54,7 @@ const PKFind = async (req, res) => {
   }
 };
 
-const refresh = async (req, res) => {
+const update = async (req, res) => {
   try {
     const { id } = req.params;
     const {
@@ -75,25 +75,25 @@ const refresh = async (req, res) => {
     info.latitude = latitude;
     info.longitude = longitude;
    
-   const placeInfo = await Place.save()
+   const placeInfo = await info.save()
     res.status(200).json(placeInfo);
   } catch (error) {
     res.status(400).json({ message: "Não foi possivel fazer a alteração" });
   }
 };
 
-const erase = async (req, res) => {
+const deleted = async (req, res) => {
   try {
     await Place.destroy({
       where: {
-        id: req.body.id,
+        id: req.params.id,
       },
     });
 
     if (!req.params.id)
       return res.status(406).json({ message: "ID nao encontrado" });
 
-    res.status(204).json({ message: "Excluido com sucesso" });
+    res.status(204).json();
   } catch (error) {
     res
       .status(400)
@@ -102,8 +102,8 @@ const erase = async (req, res) => {
 };
 
 module.exports = {
-  erase,
-  refresh,
+  deleted,
+  update,
   create,
   AllFind,
   PKFind,
