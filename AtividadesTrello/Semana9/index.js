@@ -11,14 +11,14 @@ connection.sync();
 
 app.get('/',Controller.main)
 //criar
-app.post('/place', Controller.create)
+app.post('/places', Controller.create)
 //pesquisar
-app.get('/place',Controller.AllFind)
-app.get('/place/:id',Controller.PKFind)
+app.get('/places',Controller.AllFind)
+app.get('/places/:id',Controller.PKFind)
 //atualizar
-app.put('/update/place', Controller.refresh)
+app.put('/places/update:id', Controller.refresh)
 //deletar
-app.delete('/delete/place',Controller.erase) 
+app.delete('/places/delete/:id',Controller.erase) 
 
 app.listen(3333,()=>console.log('Server On'));
 

@@ -20,11 +20,11 @@ const connection = require("../connection/db.js");
     openingHours: Sequelize.STRING,
     description: Sequelize.STRING,
     latitude: {
-      type: Sequelize.FLOAT,
+      type: Sequelize.DECIMAL,
       allowNull: false,
     },
     longitude: {
-      type: Sequelize.FLOAT,
+      type: Sequelize.DECIMAL,
       allowNull: false,
     },
   });
