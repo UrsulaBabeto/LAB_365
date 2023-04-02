@@ -4,6 +4,7 @@ const main = async (req, res) => {
   await res.status(200).json({ message: "server on" });
 };
 
+
 const create = async (req, res) => {
   try {
     const place = await {
@@ -32,25 +33,13 @@ const create = async (req, res) => {
   }
 };
 
+
 const AllFind = async (req, res) => {
   try {
     const places = await Place.findAll();
     res.status(200).json(places);
   } catch (error) {
     res.status(400).json({ message: "Não há dados no Banco de Dados" });
-  }
-};
-
-const PKFind = async (req, res) => {
-  try {
-    const places = await Place.findByPk(req.body.id);
-    res.status(200).json(places);
-
-    if (!places.id) {
-      return res.status(400).json({ message: "ID invalido" });
-    }
-  } catch (error) {
-    res.status(400).json({ message: "Este dado não consta no Banco de Dados" });
   }
 };
 
@@ -82,6 +71,7 @@ const update = async (req, res) => {
   }
 };
 
+
 const deleted = async (req, res) => {
   try {
     await Place.destroy({
@@ -106,6 +96,5 @@ module.exports = {
   update,
   create,
   AllFind,
-  PKFind,
   main,
 };

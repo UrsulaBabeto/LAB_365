@@ -14,7 +14,6 @@ app.get('/',Controller.main)
 app.post('/places', Controller.create)
 //pesquisar
 app.get('/places',Controller.AllFind)
-app.get('/places/:id',Controller.PKFind)
 //atualizar
 app.put('/places/update/:id', Controller.update)
 //deletar
