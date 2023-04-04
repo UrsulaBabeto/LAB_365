@@ -1,14 +1,16 @@
 //npm i express
 const express = require("express");
 const connection = require("./src/database");
+
 const Task = require("./src/model/task");
+const User = require("./src/model/user");
 
 const app = express();
 app.use(express.json()); //obrigatorio
 
 /* connection.authenticate()
 console.log('Connection has been established successfully.'); */
-connection.sync({alter:true});//atualiza alterações no banco de dados
+connection.sync({ alter: true }); //atualiza alterações no banco de dados
 
 app.get("/", (req, res) => {
   res.status(200).json({ message: "welcomes" });
@@ -58,16 +60,68 @@ app.delete("/tarefas/:id", async (req, res) => {
         id: req.params.id,
       },
     });
-    if (!req.params.id) return res.status(406).json({ message: "ID nao encontrado" });
+    if (!req.params.id)
+      return res.status(406).json({ message: "ID nao encontrado" });
     res.status(204).json({ message: "Deletado com sucesso" });
   } catch (error) {
     res.status(500).json({ message: "servidor fora do ar" });
   }
 });
 
+app.put("/tarefas/:id", async (req, res) => {
+  try {
+    // Task.findOne({where: { id: req.params.id }}); a mesma coisaque o findByPk
+    const taskInDatabase = await Task.findByPk(req.params.id);
+    if (!taskInDatabase) {
+      return res.status(404).json({ message: "Tarefa não encontrada" });
+    }
 
+    /*     const {name, description}=req.body;
+    taskInDatabase.name = name;
+    taskInDatabase.description = description;  MESMA SOLUÇÃO ABAIXO*/
+
+    taskInDatabase.name = req.body.name || taskInDatabase.name; //se não vier um nome no parametro,  retorne o valor ja existente
+    taskInDatabase.description = req.body.description;
+    //se o usuario passar so o um atributo como parametro
+    // o sequelize entende que o outro parametro nao sera atualizado DESDE QUE ele não seja NOT NULL
+
+    await taskInDatabase.save(); // update e save podem ser utilizados para esta mesma funçao
+    res.json(taskInDatabase);
+  } catch (error) {
+    return res.status(500).json({ message: "Servidor não encontrado" });
+  }
+});
 //NAO É RECOMENDADO ENVIAR "BODY" COM "GET"
 //DELETE É SO COM O PARAMS
+
+app.post("/users", async (req, res) => {
+  try {
+    const { name, cpf, password } = req.body;
+    const newUser = {
+      name,
+      cpf,
+      password,
+    };
+    /*    const user = await {
+      name: req.body.name,
+      cpf: req.body.cpf,
+      password: req.body.password,
+    }; */
+     if (!newUser.name) {
+      return res.status(400).json({ message: "nome obrigatório" });
+    }
+    if (!newUser.cpf) {
+      return res.status(400).json({ message: "CPF obrigatório" });
+    }
+    if (!newUser.password) {
+      return res.status(400).json({ message: "Senha obrigatória" });
+    } 
+    const user = await User.create(newUser);
+    res.status(201).json(user);
+  } catch (error) {
+    return res.status(500).json({ message: "Servidor não encontrado" });
+  }
+});
 
 app.listen(3330, () => console.log("mãe ta on"));
 
