@@ -1,0 +1,11 @@
+
+bcrypt - biblioteca que encripta a senha quando enviada para o banco
+npm i jsonwebtoken
+
+token JWT
+é emitido para permitir que o usuario acesse 
+dados protegidos de uma aplicação
+
+somente usuarios registrados e autenticados tenham acesso
+parametros: informação a ser criptografada, secret key, expire date
+npm i jsonwebtoken

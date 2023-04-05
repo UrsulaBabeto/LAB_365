@@ -1,7 +1,9 @@
 //npm i express
 const express = require("express");
-const connection = require("./src/database");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
+const connection = require("./src/database");
 const Task = require("./src/model/task");
 const User = require("./src/model/user");
 
@@ -96,18 +98,38 @@ app.put("/tarefas/:id", async (req, res) => {
 
 app.post("/users", async (req, res) => {
   try {
-    const { name, cpf, password } = req.body;
+    /*  const { name, cpf, password } = req.body;
+
     const newUser = {
       name,
       cpf,
       password,
-    };
-    /*    const user = await {
+    }; */
+
+    //valida se ja existe um cpf no body de requisição
+    const userInDb = await User.findOne({ where: { cpf: req.body.cpf } });
+    if (userInDb)
+      return res
+        .status(409)
+        .json({ message: "ja existe um usuario com este cpf" });
+
+    const hash = await bcrypt.hash(req.body.password, 10); //criptografar senha
+    // const hash =  bcrypt.hashSync(req.body.password, 10);//hashSync faz a mesma coisa sem o await
+
+    const newUser = await {
       name: req.body.name,
       cpf: req.body.cpf,
-      password: req.body.password,
-    }; */
-     if (!newUser.name) {
+      password: hash,
+    };
+
+    //nao mostrar a senha no retorno da requesr/response[
+    /* 
+    User.findAll({
+      attributes: {exclude: ['password']} */
+    const userWithoutPassword = newUSer.toJSON();
+    delete userWithoutPassword.password;
+
+    if (!newUser.name) {
       return res.status(400).json({ message: "nome obrigatório" });
     }
     if (!newUser.cpf) {
@@ -115,9 +137,44 @@ app.post("/users", async (req, res) => {
     }
     if (!newUser.password) {
       return res.status(400).json({ message: "Senha obrigatória" });
-    } 
+    }
     const user = await User.create(newUser);
-    res.status(201).json(user);
+
+    res.status(201).json(userWithoutPassword);
+  } catch (error) {
+    return res.status(500).json({ message: "Servidor não encontrado" });
+  }
+});
+
+app.post("/users/login", async (req, res) => {
+  try {
+    const userInDb = await User.findOne({
+      where: {
+        cpf: req.body.cpf,
+      },
+    });
+    if (!userInDb) {
+      return res.status(404).json({ message: "cpf incorreto" });
+    }
+
+    //compara a senha do banco de dados com a senha passada pela aplicação
+    const passwordIsValid = await bcrypt.compare(
+      req.body.password,userInDb.password);
+
+    if (!passwordIsValid) {
+      return res.status(404).json({ message: "Senha incorreta" });
+    }
+
+    const token = jwt.sign(
+      {      
+      id:userInDb.id    
+    },
+    'Eotch@n',
+    {
+      expiresIn:"10m",
+    })
+
+    res.status(200).json({name:userInDb.name + ", Bem vindo!", token:token});
   } catch (error) {
     return res.status(500).json({ message: "Servidor não encontrado" });
   }
@@ -126,3 +183,5 @@ app.post("/users", async (req, res) => {
 app.listen(3330, () => console.log("mãe ta on"));
 
 //"" , 0 , null, undefined, = false
+
+//post cria nova sessão, para login utilizamos post

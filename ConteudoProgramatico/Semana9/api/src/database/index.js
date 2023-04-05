@@ -15,3 +15,6 @@ const connection = new Sequelize({
 });
 
 module.exports = connection;
+
+
+//complexidade da criptografia 
