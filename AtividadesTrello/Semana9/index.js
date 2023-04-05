@@ -2,7 +2,9 @@ const express = require('express');
 
 const connection = require('./src/connection/db.js');
 const Controller = require('./src/controller/controller.js')
-const place = require('./src/model/place.js')
+const Place = require('./src/model/place.js');
+const User = require('./src/model/users.js');
+
 
 const app = express();
 app.use(express.json());
