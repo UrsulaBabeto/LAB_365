@@ -7,7 +7,13 @@ const User = require("../model/users");
 const users = async (req,res)=>{
     try {
        const users = await User.findAll();
-        res.status(200).json(users)
+
+       const userData = users.map(el => {
+        const { password, ...rest } = el.toJSON();
+        return rest;
+       })
+  
+        res.status(200).json(userData)
     } catch (error) {
         res.status(500).json({ message: "Algo deu errado, tente novamente" }); 
     }   
@@ -21,6 +27,8 @@ const create = async (req, res) => {
             email: req.body.email 
         }
      });
+
+     if(userDb)return res.status(403).json({message:"Email ja cadastrado"});
    
     const hash = await bcrypt.hash(req.body.password,10);
 

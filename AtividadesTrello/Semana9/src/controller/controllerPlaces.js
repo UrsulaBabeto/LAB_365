@@ -19,6 +19,7 @@ const create = async (req, res) => {
     Place.create(place);
     res.status(200).json(place);
   } catch (error) {
+    console.log(error)
     res.status(400).json({ message: "Algo deu errado, tente novamente" });
   }
 };
