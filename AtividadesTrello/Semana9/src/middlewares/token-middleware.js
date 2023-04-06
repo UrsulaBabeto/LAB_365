@@ -1,21 +1,7 @@
 const jwt = require("jsonwebtoken");
-const yup = require("yup");
 
-const validating = yup.object().shape({
-  username: yup
-    .string("Username invalido")
-    .required("Username obrigatório"),
-  password: yup
-    .string("Senha invalida")
-    .required("Senha obrigatória")
-    .min(8,"A senha precisa conter pelo menos 8 digitos"),
-});
-
-
-function fullValidation(req, res, next) {
+function tokenValidation(req, res, next) {
   try {
-    validating.validate(req.body);
-
     const token = req.headers.authorization;
 
     if (!token || token === "Bearer")
@@ -35,8 +21,8 @@ function fullValidation(req, res, next) {
       }
     });
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(400).json({ message: "token invalid" });
   }
 }
 
-module.exports = fullValidation;
+module.exports = tokenValidation;
