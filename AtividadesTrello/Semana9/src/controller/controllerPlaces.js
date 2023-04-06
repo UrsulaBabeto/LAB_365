@@ -1,9 +1,9 @@
 const Place = require("../model/place.js");
 
-const main = async (req, res) => {
+/* const main = async (req, res) => {
   await res.status(200).json({ message: "server on" });
 };
-
+ */
 
 const create = async (req, res) => {
   try {
@@ -15,15 +15,7 @@ const create = async (req, res) => {
       latitude: req.body.latitude,
       longitude: req.body.longitude,
     };
-    if (!place.name) {
-      return res.status(400).json({ message: "Nome obrigatório" });
-    }
-    if (!place.phoneNumber) {
-      return res.status(400).json({ message: "Numero de telefone obrigatório" });
-    }
-    if (!place.latitude || !place.longitude) {
-      return res.status(400).json({ message: "Coordenadas obrigatórias" });
-    }
+ 
     Place.create(place);
     res.status(200).json(place);
   } catch (error) {
@@ -44,6 +36,10 @@ const AllFind = async (req, res) => {
 const update = async (req, res) => {
   try {
     const { id } = req.params;
+
+    if (!req.params.id)
+      return res.status(406).json({ message: "ID nao encontrado" });
+
     const {
       name,
       phoneNumber,
@@ -94,5 +90,5 @@ module.exports = {
   update,
   create,
   AllFind,
-  main,
+  //main,
 };

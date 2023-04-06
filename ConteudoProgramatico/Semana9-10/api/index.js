@@ -7,8 +7,16 @@ const connection = require("./src/database");
 const Task = require("./src/model/task");
 const User = require("./src/model/user");
 
+const log = require("./src/middlewares/log");
+const validateNewUser = require("./src/middlewares/validadeNewUser");
+const validateToken = require("./src/middlewares/validate-token");
+
+
+
 const app = express();
 app.use(express.json()); //obrigatorio
+//app.use(log)//cadastra o middleware
+
 
 /* connection.authenticate()
 console.log('Connection has been established successfully.'); */
@@ -18,7 +26,7 @@ app.get("/", (req, res) => {
   res.status(200).json({ message: "welcomes" });
 });
 
-app.post("/tarefas", async (req, res) => {
+app.post("/tarefas",validateNewUser, async (req, res) => {
   try {
     const tarefa = await {
       name: req.body.name,
@@ -46,7 +54,7 @@ if(verifyTask?.name){  let lowerSelect = verifyTask.name */
   }
 });
 
-app.get("/tarefas", async (req, res) => {
+app.get("/tarefas", validateToken, async (req, res) => {
   try {
     const tasks = await Task.findAll();
     res.status(200).json(tasks);
@@ -96,7 +104,8 @@ app.put("/tarefas/:id", async (req, res) => {
 //NAO É RECOMENDADO ENVIAR "BODY" COM "GET"
 //DELETE É SO COM O PARAMS
 
-app.post("/users", async (req, res) => {
+//cadastra o middleware para um rota especifica
+app.post("/users",validateNewUser, async (req, res) => {
   try {
     /*  const { name, cpf, password } = req.body;
 
@@ -120,12 +129,8 @@ app.post("/users", async (req, res) => {
       name: req.body.name,
       cpf: req.body.cpf,
       password: hash,
-    };
+    };    
 
-    //nao mostrar a senha no retorno da requesr/response[
-    /* 
-    User.findAll({
-      attributes: {exclude: ['password']} */
     const userWithoutPassword = newUSer.toJSON();
     delete userWithoutPassword.password;
 
@@ -138,7 +143,11 @@ app.post("/users", async (req, res) => {
     if (!newUser.password) {
       return res.status(400).json({ message: "Senha obrigatória" });
     }
-    const user = await User.create(newUser);
+
+    //nao mostrar a senha no retorno da request/response
+    //desestrutura do cadastro no create() a informação que quer e passa so ela no res
+      const user = await User.create(newUser);
+      const {password, ...rest } = user.toJSON()
 
     res.status(201).json(userWithoutPassword);
   } catch (error) {
@@ -180,7 +189,9 @@ app.post("/users/login", async (req, res) => {
   }
 });
 
+
 app.listen(3330, () => console.log("mãe ta on"));
+
 
 //"" , 0 , null, undefined, = false
 

@@ -9,3 +9,7 @@ dados protegidos de uma aplicação
 somente usuarios registrados e autenticados tenham acesso
 parametros: informação a ser criptografada, secret key, expire date
 npm i jsonwebtoken
+
+excluindo a exibição da senha
+const {name}//desestrutura do cadastro no create() a informação que quer e passa so ela no res
+
