@@ -1,3 +1,5 @@
+
+require('dotenv').config();
 //npm i express
 const express = require("express");
 const bcrypt = require("bcrypt");
@@ -26,11 +28,13 @@ app.get("/", (req, res) => {
   res.status(200).json({ message: "welcomes" });
 });
 
-app.post("/tarefas",validateNewUser, async (req, res) => {
+app.post("/tarefas",validateToken, async (req, res) => {
   try {
+    console.log(req.body)
     const tarefa = await {
       name: req.body.name,
       description: req.body.description,
+      user_id:req.body.userId//cadastra uma nova coluna
     };
 
     if (!tarefa.name) {
@@ -50,13 +54,16 @@ if(verifyTask?.name){  let lowerSelect = verifyTask.name */
     /*  console.log(encontreUm) */
     res.status(200).json(tarefa);
   } catch (error) {
+    console.log(error)
     res.status(500).json({ message: "servidor fora do ar" });
   }
 });
 
 app.get("/tarefas", validateToken, async (req, res) => {
   try {
-    const tasks = await Task.findAll();
+    const tasks = await Task.findAll({where:{
+      user_id:req.body.userId
+    }});
     res.status(200).json(tasks);
   } catch (error) {
     res.status(500).json({ message: "servidor fora do ar" });
@@ -131,10 +138,7 @@ app.post("/users",validateNewUser, async (req, res) => {
       password: hash,
     };    
 
-    const userWithoutPassword = newUSer.toJSON();
-    delete userWithoutPassword.password;
-
-    if (!newUser.name) {
+       if (!newUser.name) {
       return res.status(400).json({ message: "nome obrigatório" });
     }
     if (!newUser.cpf) {
@@ -149,8 +153,9 @@ app.post("/users",validateNewUser, async (req, res) => {
       const user = await User.create(newUser);
       const {password, ...rest } = user.toJSON()
 
-    res.status(201).json(userWithoutPassword);
+    res.status(201).json(rest);
   } catch (error) {
+    console.log(error)
     return res.status(500).json({ message: "Servidor não encontrado" });
   }
 });
@@ -178,7 +183,7 @@ app.post("/users/login", async (req, res) => {
       {      
       id:userInDb.id    
     },
-    'Eotch@n',
+    process.env.CHAVE_DO_TOKEN,
     {
       expiresIn:"10m",
     })

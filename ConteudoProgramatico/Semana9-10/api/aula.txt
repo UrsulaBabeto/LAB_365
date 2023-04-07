@@ -13,3 +13,13 @@ npm i jsonwebtoken
 excluindo a exibição da senha
 const {name}//desestrutura do cadastro no create() a informação que quer e passa so ela no res
 
+
+variavel de ambiente serve para guardar dados sensiveis a aplicação
+cria-se um local para valores secretos e so ficam na maquina
+-NOMES EM CAIXA ALTA, SEM ESPAÇOS, SEMPRE SERA RETORNADO UMA STRING
+
+instala dotenv
+importar pacote no index.json, na primeira linha coloca 
+require('dotenv').config()
+criar arquivo raiz .env
+substitui a palavra sensivel por process.env.CHAVE_DO_TOKEN

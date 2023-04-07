@@ -15,7 +15,7 @@ function validateNewUser(req, res, next) {
     validation.validateSync(req.body);//valida
     next(); //libera a conexão com os metodos
   } catch (error) {
-    response.status(400).json({ message: error.message });
+    res.status(400).json({ message: error.message });
   }
 }
 
