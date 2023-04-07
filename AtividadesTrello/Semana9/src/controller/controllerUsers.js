@@ -64,7 +64,7 @@ const sessions = async (req, res) => {
 
     const token = jwt.sign(
         { id:userDb.id },
-        'chave_mestr@',
+        process.env.CHAVE_DO_TOKEN,
         { expiresIn:"1d" }
     )
 res.status(200).json({ name:userDb.fullName + ", Seja bem-vindo!", token:token})
