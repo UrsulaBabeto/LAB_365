@@ -1,6 +1,8 @@
 const { Sequelize } = require("sequelize");
 const connection = require("../connection/db.js");
 
+const User = require("./users.js");
+
 
   const Place = connection.define("place", {
     id: {
@@ -28,5 +30,7 @@ const connection = require("../connection/db.js");
       allowNull: false,
     },
   });
+
+  Place.belongsTo(User,{foreignKey:'user_id'})
 
 module.exports = Place;

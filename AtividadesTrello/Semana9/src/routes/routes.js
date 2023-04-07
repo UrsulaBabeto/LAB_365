@@ -17,15 +17,15 @@ const findUser = require('../controller/users/findUser.js');
 const route = express.Router(); 
 
 //                  PLACE
-route.post('/places',placeValidation, tokenValidation,createPLaces);
-route.get('/places',tokenValidation,allFindPlaces);
+route.post('/createPLaces',placeValidation, tokenValidation,createPLaces);
+route.get('/allFindPlaces',tokenValidation,allFindPlaces);
 route.put('/places/update/:id',tokenValidation, updatePlaces);
 route.delete('/places/delete/:id',tokenValidation,deletePlaces) ;
 
 
 //                   USER
-route.post('/users', userValidation, tokenValidation,createUser);
-route.get('/users',tokenValidation, findUser);
+route.post('/createUser', userValidation, tokenValidation,createUser);
+route.get('/findUsers',tokenValidation, findUser);
 route.post('/sessions',sessionValidation, sessions);
 
 module.exports = route;

@@ -9,14 +9,17 @@ function tokenValidation(req, res, next) {
 
     const tokenJwt = token.slice(7);
                 //token - palavra secreta - callback
-    jwt.verify(tokenJwt, "chave_mestr@", (error, conteudoToken) => {
+    jwt.verify(tokenJwt, process.env.CHAVE_DO_TOKEN, (error, conteudoToken) => {
       if (error) {
         if (error.name === "TokenExpiredError") {
           return res.status(401).json({ message: "token expired" });
-        } else if (error.name === "") {
+        } else if (error.name === "JsonWebTokenError") {
           return res.status(401).json({ message: "token expired" });
+        }else{
+          return res.status(500).json({message:"Internal server error"})
         }
       } else {
+        req.body.userId = conteudoToken.id;
         next();
       }
     });
