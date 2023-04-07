@@ -14,7 +14,7 @@ const deletePlaces = async (req, res) => {
     res.status(204).json();
   } catch (error) {
     res
-      .status(400)
+      .status(500)
       .json({ message: "Não foi possivel excluir o dado solicitado" });
   }
 };

@@ -1,5 +1,6 @@
 const User = require("../../model/users");
 const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
 
 const sessions = async (req, res) => {
     try {
@@ -21,6 +22,7 @@ const sessions = async (req, res) => {
       )
   res.status(200).json({ name:userDb.fullName + ", Seja bem-vindo!", token:token})
     } catch (error) {
+      console.log(error)
       res.status(500).json({ message: "Algo deu errado, tente novamente" });
     }
   };

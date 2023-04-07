@@ -15,7 +15,7 @@ const createPLaces = async (req, res) => {
       res.status(200).json(place);
     } catch (error) {
       console.log(error)
-      res.status(400).json({ message: "Algo deu errado, tente novamente" });
+      res.status(500).json({ message: "Algo deu errado, tente novamente" });
     }
   };
 

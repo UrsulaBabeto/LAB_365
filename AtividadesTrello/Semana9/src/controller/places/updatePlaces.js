@@ -28,7 +28,7 @@ const updatePlaces = async (req, res) => {
      const placeInfo = await info.save()
       res.status(200).json(placeInfo);
     } catch (error) {
-      res.status(400).json({ message: "Não foi possivel fazer a alteração" });
+      res.status(500).json({ message: "Não foi possivel fazer a alteração" });
     }
   };
 

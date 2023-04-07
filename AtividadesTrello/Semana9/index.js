@@ -1,14 +1,9 @@
 require('dotenv').config();
 
 const express = require("express");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
 
 const connection = require("./src/connection/db.js");
 const  router  = require("./src/routes/routes.js");
-
-const Place = require("./src/model/place.js");
-const User = require("./src/model/users.js");
 
 const app = express();
 app.use(express.json());

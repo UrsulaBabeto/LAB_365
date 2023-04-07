@@ -9,7 +9,7 @@ const createUser = async (req, res) => {
       },
     });
 
-    if (userDb) return res.status(403).json({ message: "Email ja cadastrado" });
+    if (userDb) return res.status(409).json({ message: "Email ja cadastrado" });
 
     const hash = await bcrypt.hash(req.body.password, 10);
 
