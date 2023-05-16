@@ -18,6 +18,3 @@ const findUser = async (req,res)=>{
 module.exports = findUser;
 
 
-
-
-module.exports = findUser

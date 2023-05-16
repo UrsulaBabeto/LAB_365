@@ -1,4 +1,5 @@
-const express = require('express');
+
+const express = require('express')
 
 const placeValidation = require('../middlewares/place-middleware.js');
 const userValidation = require('../middlewares/user-middleware.js');
@@ -17,15 +18,15 @@ const findUser = require('../controller/users/findUser.js');
 const route = express.Router(); 
 
 //                  PLACE
-route.post('/createPLaces',placeValidation, tokenValidation,createPLaces);
-route.get('/allFindPlaces',tokenValidation,allFindPlaces);
-route.put('/places/update/:id',tokenValidation, updatePlaces);
-route.delete('/places/delete/:id',tokenValidation,deletePlaces) ;
+route.post('/places',placeValidation, tokenValidation,createPLaces);
+route.get('/places',tokenValidation,allFindPlaces);
+route.put('/places/:id',tokenValidation, updatePlaces);
+route.delete('/places/:id',tokenValidation,deletePlaces) ;
 
 
 //                   USER
-route.post('/createUser', userValidation, tokenValidation,createUser);
-route.get('/findUsers',tokenValidation, findUser);
+route.post('/user', userValidation,createUser);
+route.get('/user',tokenValidation, findUser);
 route.post('/sessions',sessionValidation, sessions);
 
 module.exports = route;
